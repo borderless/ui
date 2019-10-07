@@ -1,0 +1,99 @@
+{
+  "name": "@borderlesslabs/ui",
+  "version": "0.0.0",
+  "private": true,
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "prettier": "prettier --write",
+    "lint": "tslint \"src/**/*.ts\" --project tsconfig.json",
+    "format": "npm run prettier -- README.md \"{src,.storybook}/**/*.{js,jsx,ts,tsx}\"",
+    "build": "rimraf dist && tsc",
+    "specs": "jest --coverage",
+    "test": "npm run -s lint && npm run -s build && npm run -s specs",
+    "prepare": "npm run build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/BorderlessLabs/ui.git"
+  },
+  "keywords": [
+    "ui",
+    "react",
+    "components"
+  ],
+  "author": "Blake Embrey <hello@blakeembrey.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BorderlessLabs/ui/issues"
+  },
+  "homepage": "https://github.com/BorderlessLabs/ui",
+  "jest": {
+    "roots": [
+      "<rootDir>/src/"
+    ],
+    "transform": {
+      "\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(tsx?|jsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,css,md}": [
+      "npm run prettier",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@storybook/addon-actions": "^5.2.1",
+    "@storybook/addon-info": "^5.2.1",
+    "@storybook/addon-knobs": "^5.2.1",
+    "@storybook/addon-links": "^5.2.1",
+    "@storybook/addons": "^5.2.1",
+    "@storybook/react": "^5.2.1",
+    "@types/jest": "^24.0.11",
+    "@types/react": "^16.7.5",
+    "@types/react-color": "^3.0.1",
+    "@types/react-dom": "^16.0.9",
+    "@types/storybook__react": "^4.0.2",
+    "babel-loader": "^8.0.6",
+    "husky": "^3.0.5",
+    "jest": "^24.0.0",
+    "lint-staged": "^9.3.0",
+    "prettier": "^1.15.2",
+    "react": "^16.8.6",
+    "react-docgen-typescript-loader": "^3.2.1",
+    "react-dom": "^16.8.6",
+    "rimraf": "^3.0.0",
+    "ts-jest": "^24.1.0",
+    "ts-loader": "^6.1.2",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.16.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.6.3"
+  },
+  "peerDependencies": {
+    "react": "*"
+  },
+  "dependencies": {
+    "react-free-style": "^9.1.0"
+  }
+}
