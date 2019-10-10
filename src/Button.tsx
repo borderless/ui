@@ -12,7 +12,8 @@ import {
   rounded,
   boxBorder,
   textColor,
-  backgroundColor
+  backgroundColor,
+  outlineNone
 } from "./css";
 
 export const primaryButton = css({
@@ -66,10 +67,14 @@ export const Button = styled("button", {
   ...px[3],
   ...h[10],
   ...rounded.m,
+  ...outlineNone,
   cursor: "pointer",
   color: colors.gray9,
   border: `1px solid transparent`,
   backgroundColor: colors.gray2,
+  [inputModifiers.focus]: {
+    boxShadow: `0 0 0 3px ${colors.indigo2}`
+  },
   [inputModifiers.hover]: {
     backgroundColor: colors.gray3
   },
