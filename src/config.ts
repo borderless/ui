@@ -23,7 +23,9 @@ export const spacingConfig = {
   40: 160,
   48: 192,
   56: 224,
-  64: 256
+  64: 256,
+  auto: "auto",
+  px: 1
 };
 
 export const fontSizeConfig = {

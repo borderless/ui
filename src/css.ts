@@ -101,11 +101,11 @@ export const capitalize: Css = { textTransform: "capitalize" };
 export const normalCase: Css = { textTransform: "none" };
 
 export const w = map(
-  { ...spacingConfig, auto: "auto", px: 1, full: "100%", screen: "100vw" },
+  { ...spacingConfig, full: "100%", screen: "100vw" },
   (x): Css => ({ width: x })
 );
 export const h = map(
-  { ...spacingConfig, auto: "auto", px: 1, full: "100%", screen: "100vh" },
+  { ...spacingConfig, full: "100%", screen: "100vh" },
   (x): Css => ({ height: x })
 );
 
@@ -136,7 +136,6 @@ export const mx = map(
   spacingConfig,
   (x): Css => ({ marginLeft: x, marginRight: x })
 );
-export const mxAuto: Css = { marginLeft: "auto", marginRight: "auto" };
 
 export const textLeft: Css = { textAlign: "left" };
 export const textCenter: Css = { textAlign: "center" };
