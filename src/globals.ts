@@ -3,8 +3,11 @@ import { fontSizeConfig, fontConfig, colors } from "./config";
 
 export const globalCss = css(f => {
   f.registerCss({
+    html: {
+      WebkitTextSizeAdjust: "100%"
+    },
     body: {
-      padding: 0
+      margin: 0
     }
   });
 
