@@ -16,7 +16,9 @@
     "test": "npm run -s lint && npm run -s build && npm run -s specs",
     "prepare": "npm run build",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "deploy": "gh-pages -d storybook-static",
+    "postpublish": "npm run build-storybook && npm run deploy"
   },
   "repository": {
     "type": "git",
@@ -75,6 +77,7 @@
     "@types/react-dom": "^16.0.9",
     "@types/storybook__react": "^4.0.2",
     "babel-loader": "^8.0.6",
+    "gh-pages": "^2.1.1",
     "husky": "^3.0.5",
     "jest": "^24.0.0",
     "lint-staged": "^9.3.0",
