@@ -10,8 +10,7 @@ import {
   mr,
   ml,
   mb,
-  flex,
-  flexColumn
+  flex
 } from "../index";
 
 export default {

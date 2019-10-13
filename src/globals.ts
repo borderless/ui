@@ -1,5 +1,5 @@
 import { styled, css } from "react-free-style";
-import { fontSizeConfig, fontConfig, colors } from "./config";
+import { fontSizeConfig, fontConfig, colors, lineHeightConfig } from "./config";
 
 export const globalCss = css(f => {
   f.registerCss({
@@ -15,9 +15,10 @@ export const globalCss = css(f => {
 });
 
 export const Container = styled("div", {
-  color: colors.gray7,
+  color: colors.gray8,
   fontSize: fontSizeConfig.m,
   fontFamily: fontConfig.sans,
+  lineHeight: lineHeightConfig.normal,
   "& *": {
     fontSize: "inherit",
     fontWeight: "inherit",

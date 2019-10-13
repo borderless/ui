@@ -20,7 +20,6 @@ import {
   block,
   inlineFlex,
   itemsCenter,
-  mb,
   pr
 } from "./css";
 
@@ -105,5 +104,5 @@ export const InlineLabel = styled("label", {
 });
 
 export const LabelText = styled("div", {
-  ...textColor.gray7
+  ...textColor.gray8
 });

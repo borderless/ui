@@ -1,4 +1,4 @@
-import { styled, join, css } from "react-free-style";
+import { styled, css } from "react-free-style";
 import { colors, spacingConfig, fontWeightConfig } from "./config";
 
 export const Table = styled("table", {
@@ -14,14 +14,12 @@ export const TableHead = styled("thead", {
 export const TableRow = styled("tr");
 
 export const TableHeadCell = styled("th", {
-  color: colors.gray7,
   textAlign: "left",
   padding: spacingConfig[2],
   fontWeight: fontWeightConfig.semiBold
 });
 
 export const TableCell = styled("td", {
-  color: colors.gray8,
   padding: spacingConfig[2],
   borderTop: `1px solid ${colors.gray3}`
 });

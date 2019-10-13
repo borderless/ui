@@ -1,27 +1,31 @@
 import * as React from "react";
 import { styled, Css } from "react-free-style";
-import { colors, roundingConfig } from "./config";
+import { colors } from "./config";
+import { animationName } from "./utilities";
+import { rounded, borderColor, borderSolid, boxBorder } from "./css";
 
-const Base = styled("div", f => {
-  const spinner = f.registerKeyframes({
+const Base = styled("div", [
+  animationName({
     to: {
       transform: `rotate(360deg)`
     }
-  });
-
-  return {
-    boxSizing: "border-box",
-    borderStyle: "solid",
-    borderRadius: roundingConfig.full,
-    borderColor: colors.transparent,
-    animation: `${spinner} 1s linear infinite`
-  };
-});
+  }),
+  {
+    animationDuration: "1s",
+    animationIterationCount: "infinite",
+    animationTimingFunction: "linear"
+  },
+  boxBorder,
+  rounded.full,
+  borderSolid,
+  borderColor.transparent
+]);
 
 export function Spinner({
   size = 40,
   width = 4,
-  color = colors.gray5,
+  color = colors.gray4,
+  backgroundColor = colors.gray1,
   css,
   ...props
 }: Omit<JSX.IntrinsicElements["div"], "ref"> & {
@@ -29,17 +33,20 @@ export function Spinner({
   size?: number | string;
   width?: number | string;
   color?: string;
+  backgroundColor?: string;
 }) {
   return (
     <Base
-      css={{
-        width: size,
-        height: size,
-        borderWidth: width,
-        borderLeftColor: color,
-        borderRightColor: color,
-        ...css
-      }}
+      css={[
+        {
+          width: size,
+          height: size,
+          borderWidth: width,
+          borderColor: backgroundColor,
+          borderRightColor: color
+        },
+        css
+      ]}
       {...props}
     />
   );

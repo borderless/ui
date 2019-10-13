@@ -244,3 +244,48 @@ export const leading = map(
   lineHeightConfig,
   (lineHeight): Css => ({ lineHeight })
 );
+
+export const selectNone: Css = {
+  MozUserSelect: "none",
+  msUserSelect: "none",
+  WebkitUserSelect: "none",
+  userSelect: "none"
+};
+
+export const selectText: Css = {
+  MozUserSelect: "text",
+  msUserSelect: "text",
+  WebkitUserSelect: "text",
+  userSelect: "text"
+};
+
+export const selectAuto: Css = {
+  MozUserSelect: "auto",
+  WebkitUserSelect: "auto",
+  userSelect: "auto"
+};
+
+export const selectAll: Css = {
+  MozUserSelect: "all",
+  WebkitUserSelect: "all",
+  userSelect: "all"
+};
+
+export const selectContain: Css = {
+  MozUserSelect: "contain",
+  msUserSelect: "element",
+  WebkitUserSelect: "contain",
+  userSelect: "contain"
+};
+
+export const backgroundBorder: Css = {
+  backgroundClip: "border-box"
+};
+
+export const backgroundContent: Css = {
+  backgroundClip: "content-box"
+};
+
+export const backgroundPadding: Css = {
+  backgroundClip: "padding-box"
+};
