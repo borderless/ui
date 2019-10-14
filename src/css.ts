@@ -78,6 +78,12 @@ export const itemsEnd: Css = { alignItems: "flex-end" };
 export const itemsStretch: Css = { alignItems: "space-stretch" };
 export const itemsBaseline: Css = { alignItems: "space-baseline" };
 
+export const selfAuto: Css = { alignSelf: "auto" };
+export const selfStart: Css = { alignSelf: "flex-start" };
+export const selfCenter: Css = { alignSelf: "center" };
+export const selfEnd: Css = { alignSelf: "flex-end" };
+export const selfStretch: Css = { alignSelf: "stretch" };
+
 export const flexInitial: Css = { flex: "0 1 auto" };
 export const flex1: Css = { flex: "1 1 0%" };
 export const flexAuto: Css = { flex: "1 1 auto" };
