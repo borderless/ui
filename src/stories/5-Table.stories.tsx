@@ -1,5 +1,6 @@
 import * as React from "react";
 import {
+  Box,
   Table,
   TableHead,
   TableBody,
@@ -8,55 +9,90 @@ import {
   TableHeadCell,
   borderedTable
 } from "../index";
+import { mt } from "../css";
 
 export default {
   title: "Table"
 };
 
 export const table = () => (
-  <Table>
-    <TableHead>
-      <TableRow>
-        <TableHeadCell>ID</TableHeadCell>
-        <TableHeadCell>Name</TableHeadCell>
-        <TableHeadCell>Email</TableHeadCell>
-      </TableRow>
-    </TableHead>
-    <TableBody>
-      <TableRow>
-        <TableCell>1</TableCell>
-        <TableCell>Blake</TableCell>
-        <TableCell>blake@example.com</TableCell>
-      </TableRow>
-      <TableRow>
-        <TableCell>2</TableCell>
-        <TableCell>Keyue</TableCell>
-        <TableCell>keyue@example.com</TableCell>
-      </TableRow>
-    </TableBody>
-  </Table>
-);
+  <Box>
+    <Table>
+      <TableHead>
+        <TableRow>
+          <TableHeadCell>ID</TableHeadCell>
+          <TableHeadCell>Name</TableHeadCell>
+          <TableHeadCell>Email</TableHeadCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        <TableRow>
+          <TableCell>1</TableCell>
+          <TableCell>Blake</TableCell>
+          <TableCell>blake@example.com</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>2</TableCell>
+          <TableCell>Keyue</TableCell>
+          <TableCell>keyue@example.com</TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
 
-export const tableBorder = () => (
-  <Table css={borderedTable}>
-    <TableHead>
-      <TableRow>
-        <TableHeadCell>ID</TableHeadCell>
-        <TableHeadCell>Name</TableHeadCell>
-        <TableHeadCell>Email</TableHeadCell>
-      </TableRow>
-    </TableHead>
-    <TableBody>
-      <TableRow>
-        <TableCell>1</TableCell>
-        <TableCell>Blake</TableCell>
-        <TableCell>blake@example.com</TableCell>
-      </TableRow>
-      <TableRow>
-        <TableCell>2</TableCell>
-        <TableCell>Keyue</TableCell>
-        <TableCell>keyue@example.com</TableCell>
-      </TableRow>
-    </TableBody>
-  </Table>
+    <Table css={[mt[3], borderedTable]}>
+      <TableHead>
+        <TableRow>
+          <TableHeadCell>ID</TableHeadCell>
+          <TableHeadCell>Name</TableHeadCell>
+          <TableHeadCell>Email</TableHeadCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        <TableRow>
+          <TableCell>1</TableCell>
+          <TableCell>Blake</TableCell>
+          <TableCell>blake@example.com</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>2</TableCell>
+          <TableCell>Keyue</TableCell>
+          <TableCell>keyue@example.com</TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
+
+    <Table css={mt[3]}>
+      <TableBody>
+        <TableRow>
+          <TableHeadCell>Name</TableHeadCell>
+          <TableCell>Blake</TableCell>
+          <TableHeadCell>Email</TableHeadCell>
+          <TableCell>blake@example.com</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableHeadCell>Name</TableHeadCell>
+          <TableCell>Keyue</TableCell>
+          <TableHeadCell>Email</TableHeadCell>
+          <TableCell>keyue@example.com</TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
+
+    <Table css={[mt[3], borderedTable]}>
+      <TableBody>
+        <TableRow>
+          <TableHeadCell>Name</TableHeadCell>
+          <TableCell>Blake</TableCell>
+          <TableHeadCell>Email</TableHeadCell>
+          <TableCell>blake@example.com</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableHeadCell>Name</TableHeadCell>
+          <TableCell>Keyue</TableCell>
+          <TableHeadCell>Email</TableHeadCell>
+          <TableCell>keyue@example.com</TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
+  </Box>
 );
