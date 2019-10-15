@@ -94,15 +94,27 @@ export const Select = styled(
   })
 );
 
-export const Label = styled("label", {
-  ...block
-});
+export const Label = styled(
+  "label",
+  {
+    ...block
+  },
+  "Label"
+);
 
-export const InlineLabel = styled("label", {
-  ...inlineFlex,
-  ...itemsCenter
-});
+export const InlineLabel = styled(
+  "label",
+  {
+    ...inlineFlex,
+    ...itemsCenter
+  },
+  "InlineLabel"
+);
 
-export const LabelText = styled("div", {
-  ...textColor.gray8
-});
+export const LabelText = styled(
+  "div",
+  {
+    ...textColor.gray8
+  },
+  "LabelText"
+);

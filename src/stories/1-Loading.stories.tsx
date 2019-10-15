@@ -7,7 +7,7 @@ import { FakeText, loadingContent } from "../Placeholder";
 import { floatLeft, w, h, mr, mb, inlineBlock, clearFix } from "../css";
 
 export default {
-  title: "Spinner"
+  title: "Loading"
 };
 
 export const spinner = () => (
