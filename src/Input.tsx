@@ -37,7 +37,11 @@ export const Input = styled("input", {
   ...borderColor.gray3,
   [inputModifiers.focus]: {
     ...borderColor.indigo6,
-    boxShadow: `0 0 0 3px ${colors.indigo2}`
+    boxShadow: `0 0 0 3px ${colors.indigo2}`,
+    [inputModifiers.invalid]: {
+      ...borderColor.red6,
+      boxShadow: `0 0 0 3px ${colors.red2}`
+    }
   },
   [inputModifiers.disabled]: {
     ...backgroundColor.gray1,

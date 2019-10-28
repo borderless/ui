@@ -20,7 +20,7 @@ export default {
 export const input = () => (
   <Box css={flex}>
     <Label css={mr[2]}>
-      <LabelText css={mb[2]}>Enter a value</LabelText>
+      <LabelText css={mb[2]}>Default input:</LabelText>
       <Input
         onChange={action("change")}
         onClick={action("click")}
@@ -28,21 +28,25 @@ export const input = () => (
       />
     </Label>
     <Label css={mr[2]}>
-      <LabelText css={mb[2]}>Enter a value</LabelText>
+      <LabelText css={mb[2]}>Placeholder input:</LabelText>
       <Input
         placeholder="Placeholder value"
         onChange={action("change")}
         onClick={action("click")}
       />
     </Label>
-    <Label>
-      <LabelText css={mb[2]}>Enter a value</LabelText>
+    <Label css={mr[2]}>
+      <LabelText css={mb[2]}>Disabled input:</LabelText>
       <Input
         placeholder="Disabled Input"
         onChange={action("change")}
         onClick={action("click")}
         disabled
       />
+    </Label>
+    <Label css={mr[2]}>
+      <LabelText css={mb[2]}>Required input:</LabelText>
+      <Input onChange={action("change")} onClick={action("click")} required />
     </Label>
   </Box>
 );

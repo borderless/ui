@@ -107,7 +107,11 @@ export const inputModifiers = {
   active: "&:active:not(:disabled)",
   focus: "&:focus:not(:disabled)",
   placeholder: "&::placeholder",
-  disabled: "&:disabled"
+  disabled: "&:disabled",
+  valid: "&:valid",
+  invalid: "&:invalid",
+  required: "&:required",
+  optional: "&:optional"
 };
 
 // https://tailwindcss.com/docs/customizing-colors#default-color-palette
