@@ -11,7 +11,7 @@ export default {
 };
 
 export const spinner = () => (
-  <Spinner size={number("Size", 40)} width={number("Width", 4)} />
+  <Spinner size={number("Size", 40)} width={number("Width", 2)} />
 );
 
 export const placeholder = () => (

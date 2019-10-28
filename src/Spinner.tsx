@@ -27,7 +27,7 @@ const Base = styled(
 
 export function Spinner({
   size = 40,
-  width = 4,
+  width = 2,
   color = colors.gray4,
   backgroundColor = colors.gray1,
   css,
