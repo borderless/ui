@@ -1,5 +1,4 @@
 import * as React from "react";
-import { join } from "react-free-style";
 import * as ui from "../index";
 
 export default {
@@ -22,11 +21,11 @@ export const spacing = () => (
           <ui.TableCell>{value}</ui.TableCell>
           <ui.TableCell>
             <ui.Box
-              css={join(
+              css={[
                 ui.w[(key as any) as keyof typeof ui.spacingConfig],
                 ui.backgroundColor.gray5,
                 ui.h[4]
-              )}
+              ]}
             />
           </ui.TableCell>
         </ui.TableRow>
@@ -37,14 +36,14 @@ export const spacing = () => (
 
 const ColorBlock = ({ name, color }: { name: string; color: string }) => (
   <ui.Box
-    css={join(
+    css={[
       ui.inlineFlex,
       ui.justifyCenter,
       ui.itemsCenter,
       ui.p[1],
       ui.w[24],
       ui.h[8]
-    )}
+    ]}
     style={{
       backgroundColor: color
     }}

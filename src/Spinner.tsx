@@ -4,26 +4,22 @@ import { colors } from "./config";
 import { animationName } from "./utilities";
 import { rounded, borderColor, borderSolid, boxBorder } from "./css";
 
-const Base = styled(
-  "div",
-  [
-    animationName({
-      to: {
-        transform: `rotate(360deg)`
-      }
-    }),
-    {
-      animationDuration: "1s",
-      animationIterationCount: "infinite",
-      animationTimingFunction: "linear"
-    },
-    boxBorder,
-    rounded.full,
-    borderSolid,
-    borderColor.transparent
-  ],
-  "Spinner"
-);
+const Base = styled("div", [
+  animationName({
+    to: {
+      transform: `rotate(360deg)`
+    }
+  }),
+  {
+    animationDuration: "1s",
+    animationIterationCount: "infinite",
+    animationTimingFunction: "linear"
+  },
+  boxBorder,
+  rounded.full,
+  borderSolid,
+  borderColor.transparent
+]);
 
 export function Spinner({
   size = 40,

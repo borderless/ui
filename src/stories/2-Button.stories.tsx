@@ -1,5 +1,4 @@
 import * as React from "react";
-import { join } from "react-free-style";
 import { action } from "@storybook/addon-actions";
 import {
   Box,
@@ -24,16 +23,13 @@ export const textButtons = () => {
         <Button onClick={action("clicked")} css={mr[2]}>
           Default Button
         </Button>
-        <Button onClick={action("clicked")} css={join(primaryButton, mr[2])}>
+        <Button onClick={action("clicked")} css={[primaryButton, mr[2]]}>
           Primary Button
         </Button>
-        <Button
-          onClick={action("clicked")}
-          css={join(outlinePrimaryButton, mr[2])}
-        >
+        <Button onClick={action("clicked")} css={[outlinePrimaryButton, mr[2]]}>
           Outline Primary Button
         </Button>
-        <Button onClick={action("clicked")} css={join(minimalButton, mr[2])}>
+        <Button onClick={action("clicked")} css={[minimalButton, mr[2]]}>
           Minimal Primary Button
         </Button>
       </Box>
@@ -44,21 +40,21 @@ export const textButtons = () => {
         </Button>
         <Button
           onClick={action("clicked")}
-          css={join(primaryButton, mr[2])}
+          css={[primaryButton, mr[2]]}
           disabled
         >
           Primary Button
         </Button>
         <Button
           onClick={action("clicked")}
-          css={join(outlinePrimaryButton, mr[2])}
+          css={[outlinePrimaryButton, mr[2]]}
           disabled
         >
           Outline Primary Button
         </Button>
         <Button
           onClick={action("clicked")}
-          css={join(minimalButton, mr[2])}
+          css={[minimalButton, mr[2]]}
           disabled
         >
           Minimal Primary Button

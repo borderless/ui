@@ -9,21 +9,17 @@ import {
 } from "./css";
 import { fontConfig } from "./config";
 
-export const Paragraph = styled("p", [leading.normal], "Paragraph");
+export const Paragraph = styled("p", [leading.normal]);
 
-export const Code = styled(
-  "code",
-  [
-    inlineBlock,
-    backgroundColor.gray1,
-    textColor.indigo6,
-    rounded.sm,
-    px[1],
-    {
-      fontFamily: fontConfig.mono,
-      whiteSpace: "nowrap",
-      verticalAlign: "baseline"
-    }
-  ],
-  "Code"
-);
+export const Code = styled("code", [
+  inlineBlock,
+  backgroundColor.gray1,
+  textColor.indigo6,
+  rounded.sm,
+  px[1],
+  {
+    fontFamily: fontConfig.mono,
+    whiteSpace: "nowrap",
+    verticalAlign: "baseline"
+  }
+]);
