@@ -1,15 +1,12 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
+import { flex, flexColumn, mb, mr } from "@borderlesslabs/atoms";
 import {
   Box,
-  flex,
-  flexColumn,
   Button,
   primaryButton,
   outlinePrimaryButton,
-  minimalButton,
-  mb,
-  mr
+  minimalButton
 } from "../index";
 
 export default {

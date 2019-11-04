@@ -1,4 +1,5 @@
 import * as React from "react";
+import { mt } from "@borderlesslabs/atoms";
 import {
   Box,
   Table,
@@ -9,7 +10,6 @@ import {
   TableHeadCell,
   borderedTable
 } from "../index";
-import { mt } from "../css";
 
 export default {
   title: "Table"

@@ -1,10 +1,18 @@
 import * as React from "react";
 import { number } from "@storybook/addon-knobs";
+import {
+  floatLeft,
+  w,
+  h,
+  mr,
+  mb,
+  inlineBlock,
+  clearFix
+} from "@borderlesslabs/atoms";
 import { Spinner } from "../Spinner";
 import { Box } from "../Box";
 import { Paragraph } from "../Text";
 import { FakeText, loadingContent } from "../Placeholder";
-import { floatLeft, w, h, mr, mb, inlineBlock, clearFix } from "../css";
 
 export default {
   title: "Loading"

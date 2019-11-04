@@ -1,5 +1,6 @@
 import { styled, css } from "react-free-style";
-import { fontSizeConfig, fontConfig, colors, lineHeightConfig } from "./config";
+import { color, fontSize, leading, nest, m, p } from "@borderlesslabs/atoms";
+import { fontSans } from "./Text";
 
 export const globalCss = css(f => {
   f.registerCss({
@@ -14,16 +15,16 @@ export const globalCss = css(f => {
   return "";
 });
 
-export const Container = styled("div", {
-  color: colors.gray8,
-  fontSize: fontSizeConfig.m,
-  fontFamily: fontConfig.sans,
-  lineHeight: lineHeightConfig.normal,
-  "& *": {
-    fontSize: "inherit",
-    fontWeight: "inherit",
-    margin: 0,
-    padding: 0,
-    listStyle: "none"
-  }
-});
+export const Container = styled("div", [
+  color.gray8,
+  fontSize.m,
+  leading.normal,
+  { fontFamily: fontSans },
+  nest("& *", "wildcard")(
+    m[0],
+    p[0],
+    { fontSize: "inherit" },
+    { fontWeight: "inherit" },
+    { listStyle: "none" }
+  )
+]);

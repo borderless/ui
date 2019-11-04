@@ -1,11 +1,17 @@
 import * as React from "react";
 import { styled, Css } from "react-free-style";
-import { colors } from "./config";
-import { animationName } from "./utilities";
-import { rounded, borderColor, borderSolid, boxBorder } from "./css";
+import {
+  rounded,
+  borderColor,
+  borderSolid,
+  boxBorder,
+  colorConfig,
+  animationName
+} from "@borderlesslabs/atoms";
 
 const Base = styled("div", [
   animationName({
+    $displayName: "spinner",
     to: {
       transform: `rotate(360deg)`
     }
@@ -24,8 +30,8 @@ const Base = styled("div", [
 export function Spinner({
   size = 40,
   width = 2,
-  color = colors.gray4,
-  backgroundColor = colors.gray1,
+  color = colorConfig.gray4,
+  backgroundColor = colorConfig.gray1,
   css,
   ...props
 }: Omit<JSX.IntrinsicElements["div"], "ref"> & {

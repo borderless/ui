@@ -1,16 +1,20 @@
 import { styled, css } from "react-free-style";
 import {
+  animationName,
   leading,
-  textColor,
+  color,
+  colorConfig,
   inlineBlock,
   backgroundFixed,
-  selectNone
-} from "./css";
-import { colors } from "./config";
-import { animationName } from "./utilities";
+  selectNone,
+  h,
+  pseudoAfter,
+  cursorDefault
+} from "@borderlesslabs/atoms";
 
 export const loadingContent = css([
   animationName({
+    $displayName: "backgroundSlide",
     "0%": {
       backgroundPosition: "-2000px 0"
     },
@@ -19,17 +23,17 @@ export const loadingContent = css([
     }
   }),
   {
-    cursor: "default",
     animationDuration: "2s",
     animationIterationCount: "infinite",
     animationTimingFunction: "linear",
     background: [
-      colors.gray2,
-      `linear-gradient(to right, ${colors.gray2} 80px, ${colors.gray4} 180px, ${colors.gray2} 330px)`
+      colorConfig.gray2,
+      `linear-gradient(to right, ${colorConfig.gray2} 80px, ${colorConfig.gray4} 180px, ${colorConfig.gray2} 330px)`
     ],
     backgroundSize: "2000px 100%"
   },
-  textColor.transparent,
+  cursorDefault,
+  color.transparent,
   selectNone,
   backgroundFixed
 ]);
@@ -37,11 +41,9 @@ export const loadingContent = css([
 export const FakeText = styled("span", [
   inlineBlock,
   leading.none,
-  { height: "1em" },
-  {
-    "&:after": {
-      content: '""',
-      display: "inline-block"
-    }
-  }
+  h.em,
+  pseudoAfter({
+    content: '""',
+    display: "inline-block"
+  })
 ]);

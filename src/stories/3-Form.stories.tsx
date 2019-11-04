@@ -1,17 +1,7 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import {
-  Box,
-  Input,
-  Select,
-  Label,
-  InlineLabel,
-  LabelText,
-  mr,
-  ml,
-  mb,
-  flex
-} from "../index";
+import { mr, ml, mb, flex } from "@borderlesslabs/atoms";
+import { Box, Input, Select, Label, InlineLabel, LabelText } from "../index";
 
 export default {
   title: "Form"

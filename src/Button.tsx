@@ -1,6 +1,6 @@
 import { styled, css } from "react-free-style";
-import { colors, inputModifiers } from "./config";
 import {
+  colorConfig,
   inlineFlex,
   justifyCenter,
   itemsCenter,
@@ -11,78 +11,65 @@ import {
   h,
   rounded,
   boxBorder,
-  textColor,
+  color,
   backgroundColor,
-  outlineNone
-} from "./css";
+  outlineNone,
+  pseudoHover,
+  pseudoActive,
+  border,
+  pseudoDisabled,
+  pseudoFocus,
+  cursorNotAllowed,
+  opacity50
+} from "@borderlesslabs/atoms";
 
-export const primaryButton = css({
-  ...textColor.white,
-  ...backgroundColor.indigo6,
-  [inputModifiers.hover]: {
-    ...backgroundColor.indigo5
-  },
-  [inputModifiers.active]: {
-    ...backgroundColor.indigo7
-  }
-});
+export const primaryButton = css([
+  color.white,
+  backgroundColor.indigo6,
+  pseudoHover(backgroundColor.indigo5),
+  pseudoActive(backgroundColor.indigo7)
+]);
 
-export const outlinePrimaryButton = css({
-  color: colors.indigo6,
-  backgroundColor: "transparent",
-  borderColor: colors.indigo6,
-  [inputModifiers.hover]: {
-    color: colors.white,
-    backgroundColor: colors.indigo6
-  },
-  [inputModifiers.active]: {
-    color: colors.white,
-    borderColor: colors.indigo7,
-    backgroundColor: colors.indigo7
-  }
-});
+export const outlinePrimaryButton = css([
+  color.indigo6,
+  backgroundColor.transparent,
+  border[1],
+  borderSolid,
+  borderColor.indigo6,
+  pseudoHover(color.white, backgroundColor.indigo6),
+  pseudoActive(color.white, borderColor.indigo7, backgroundColor.indigo7)
+]);
 
-export const minimalButton = css({
-  color: colors.indigo6,
-  backgroundColor: "transparent",
-  borderColor: "transparent",
-  [inputModifiers.hover]: {
-    color: colors.indigo5,
-    backgroundColor: "transparent"
-  },
-  [inputModifiers.active]: {
-    color: colors.indigo7,
-    backgroundColor: "transparent"
-  }
-});
+export const minimalButton = css([
+  color.indigo6,
+  backgroundColor.transparent,
+  borderColor.transparent,
+  pseudoHover(color.indigo6, backgroundColor.transparent),
+  pseudoActive(color.indigo7, backgroundColor.transparent)
+]);
 
-export const Button = styled("button", {
-  ...boxBorder,
-  ...inlineFlex,
-  ...justifyCenter,
-  ...itemsCenter,
-  ...fontSize.m,
-  ...borderSolid,
-  ...borderColor.transparent,
-  ...px[3],
-  ...h[10],
-  ...rounded.m,
-  ...outlineNone,
-  cursor: "pointer",
-  color: colors.gray9,
-  border: `1px solid transparent`,
-  backgroundColor: colors.gray2,
-  [inputModifiers.focus]: {
-    boxShadow: `0 0 0 3px ${colors.indigo2}`
-  },
-  [inputModifiers.hover]: {
-    backgroundColor: colors.gray3
-  },
-  [inputModifiers.active]: {
-    backgroundColor: colors.gray4
-  },
-  [inputModifiers.disabled]: {
-    cursor: "not-allowed",
-    opacity: 0.5
-  }
-});
+export const Button = styled("button", [
+  { cursor: "pointer" },
+  boxBorder,
+  inlineFlex,
+  justifyCenter,
+  itemsCenter,
+  fontSize.m,
+  borderSolid,
+  borderColor.transparent,
+  px[3],
+  h[10],
+  rounded.m,
+  outlineNone,
+  color.gray9,
+  border[1],
+  borderSolid,
+  borderColor.transparent,
+  backgroundColor.gray2,
+  pseudoFocus({
+    boxShadow: `0 0 0 3px ${colorConfig.indigo2}`
+  }),
+  pseudoHover(backgroundColor.gray3),
+  pseudoActive(backgroundColor.gray4),
+  pseudoDisabled(cursorNotAllowed, opacity50)
+]);

@@ -2,7 +2,8 @@ import React from "react";
 import { configure, addDecorator } from "@storybook/react";
 import { StyleSheetRenderer, Context } from "react-free-style";
 import { withKnobs } from "@storybook/addon-knobs";
-import { Container, globalCss, p } from "../src/index";
+import { p } from "@borderlesslabs/atoms";
+import { Container, globalCss } from "../src/index";
 
 const renderer = new StyleSheetRenderer(true);
 
