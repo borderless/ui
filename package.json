@@ -4,14 +4,17 @@
   "description": "UI components based on React Free Style and Atoms",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "module": "dist.es2015/index.js",
+  "jsnext:main": "dist.es2015/index.js",
+  "sideEffects": false,
   "files": [
     "dist/"
   ],
   "scripts": {
     "prettier": "prettier --write",
     "lint": "tslint \"src/**/*.ts\" --project tsconfig.json",
-    "format": "npm run prettier -- README.md \"{src,.storybook}/**/*.{js,jsx,ts,tsx}\"",
-    "build": "rimraf dist && tsc",
+    "format": "npm run prettier -- \"{.,src/**,.storybook/**}/*.{js,jsx,ts,tsx,md,yml,yaml}\"",
+    "build": "rimraf dist/ dist.es2015/ && tsc && tsc -P tsconfig.es2015.json",
     "specs": "jest --coverage",
     "test": "npm run -s lint && npm run -s build && npm run -s specs",
     "prepare": "npm run build",
@@ -35,9 +38,6 @@
     "url": "https://github.com/BorderlessLabs/ui/issues"
   },
   "homepage": "https://github.com/BorderlessLabs/ui",
-  "publishConfig": {
-    "access": "public"
-  },
   "jest": {
     "roots": [
       "<rootDir>/src/"
@@ -61,10 +61,13 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,json,css,md}": [
+    "*.{js,jsx,ts,tsx,md,yml,yaml}": [
       "npm run prettier",
       "git add"
     ]
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
