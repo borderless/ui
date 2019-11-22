@@ -45,13 +45,13 @@ const borderTableCellStyle = [
   border[1],
   borderSolid,
   borderColor.gray3,
-  ...pseudoFirstChild(borderLeft[0])
+  pseudoFirstChild(borderLeft[0])
 ];
 
 export const borderedTable = css([
   border[1],
   borderSolid,
   borderColor.gray3,
-  nest("td", "td")(...borderTableCellStyle),
-  nest("th", "th")(...borderTableCellStyle)
+  nest("td", "td")(borderTableCellStyle),
+  nest("th", "th")(borderTableCellStyle)
 ]);

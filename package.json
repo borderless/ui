@@ -97,13 +97,13 @@
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.16.0",
     "tslint-config-standard": "^9.0.0",
-    "typescript": "^3.6.4"
+    "typescript": "^3.7.2"
   },
   "peerDependencies": {
     "react": "*"
   },
   "dependencies": {
-    "@borderlesslabs/atoms": "^0.1.0",
+    "@borderlesslabs/atoms": "^0.1.1",
     "react-free-style": "^10.0.1"
   }
 }

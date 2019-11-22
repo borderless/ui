@@ -1,5 +1,6 @@
 import { styled } from "react-free-style";
 import {
+  nest,
   borderColor,
   borderSolid,
   appearanceNone,
@@ -25,7 +26,10 @@ import {
   pseudoInvalid,
   pseudoDisabled,
   pseudoPlaceholder,
-  cursorNotAllowed
+  cursorNotAllowed,
+  w,
+  h,
+  pseudoChecked
 } from "@borderlesslabs/atoms";
 
 export const Input = styled("input", [
@@ -43,44 +47,42 @@ export const Input = styled("input", [
   pseudoFocus(
     borderColor.indigo6,
     { boxShadow: `0 0 0 3px ${colorConfig.indigo2}` },
-    ...pseudoInvalid(borderColor.red6, {
+    pseudoInvalid(borderColor.red6, {
       boxShadow: `0 0 0 3px ${colorConfig.red2}`
     })
   ),
   pseudoDisabled(backgroundColor.gray1, cursorNotAllowed),
   pseudoPlaceholder(color.gray5),
-  {
-    "&[type=radio]": {
-      ...inlineBlock,
-      ...p[0],
-      ...color.indigo6,
-      ...flexShrink0,
-      ...rounded.full,
-      width: "1em",
-      height: "1em",
-      "&:checked": {
-        backgroundImage: `url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e")`,
-        ...borderColor.transparent,
-        backgroundColor: "currentColor",
-        backgroundSize: "100% 100%"
-      }
-    },
-    "&[type=checkbox]": {
-      ...inlineBlock,
-      ...p[0],
-      ...color.indigo6,
-      ...flexShrink0,
-      ...rounded.m,
-      width: "1em",
-      height: "1em",
-      "&:checked": {
-        backgroundImage: `url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e")`,
-        ...borderColor.transparent,
-        backgroundColor: "currentColor",
-        backgroundSize: "100% 100%"
-      }
-    }
-  }
+  nest("&[type=radio]", "radio")(
+    inlineBlock,
+    p[0],
+    color.indigo6,
+    flexShrink0,
+    rounded.full,
+    w.em,
+    h.em,
+    pseudoChecked(borderColor.transparent, {
+      backgroundImage: `url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e")`,
+      backgroundColor: "currentColor",
+      backgroundSize: "100% 100%",
+      $displayName: "radioImage"
+    })
+  ),
+  nest("&[type=checkbox]", "checkbox")(
+    inlineBlock,
+    p[0],
+    color.indigo6,
+    flexShrink0,
+    rounded.m,
+    w.em,
+    h.em,
+    pseudoChecked(borderColor.transparent, {
+      backgroundImage: `url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e")`,
+      backgroundColor: "currentColor",
+      backgroundSize: "100% 100%",
+      $displayName: "checkboxImage"
+    })
+  )
 ]);
 
 export const Select = styled("select", [
@@ -92,11 +94,9 @@ export const Select = styled("select", [
     backgroundPosition: `right 0.5em center`,
     backgroundSize: `1.5em 1.5em`,
     paddingRight: "2.5em",
-    "&[multiple]": {
-      backgroundImage: "none",
-      ...pr[3]
-    }
-  }
+    $displayName: "image"
+  },
+  nest("&[multiple]", "multiple")({ backgroundImage: "none" }, pr[3])
 ]);
 
 export const Label = styled("label", [block]);

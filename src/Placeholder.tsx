@@ -23,6 +23,7 @@ export const loadingContent = css([
     }
   }),
   {
+    $displayName: "slideAnimation",
     animationDuration: "2s",
     animationIterationCount: "infinite",
     animationTimingFunction: "linear",
