@@ -1,4 +1,4 @@
-import { styled } from "react-free-style";
+import { styled, css } from "react-free-style";
 import {
   nest,
   borderColor,
@@ -32,15 +32,19 @@ import {
   pseudoChecked
 } from "@borderlesslabs/atoms";
 
+export const inputSmall = css([fontSize.s, py[1], px[2], h[8]]);
+
+export const inputStandard = css([fontSize.m, py[2], px[3], h[10]]);
+
+export const inputLarge = css([fontSize.l, py[3], px[4], h[12]]);
+
 export const Input = styled("input", [
+  inputStandard,
   appearanceNone,
   boxBorder,
   leading.normal,
-  py[2],
-  px[3],
   rounded.m,
   outlineNone,
-  fontSize.m,
   borderSolid,
   border[1],
   borderColor.gray3,
@@ -97,6 +101,12 @@ export const Select = styled("select", [
     $displayName: "image"
   },
   nest("&[multiple]", "multiple")({ backgroundImage: "none" }, pr[3])
+]);
+
+export const Textarea = styled("textarea", [
+  Input.style,
+  backgroundColor.white,
+  h.auto
 ]);
 
 export const Label = styled("label", [block]);

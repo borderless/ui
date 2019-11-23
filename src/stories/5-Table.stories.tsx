@@ -8,7 +8,7 @@ import {
   TableCell,
   TableRow,
   TableHeadCell,
-  borderedTable
+  tableBordered
 } from "../index";
 
 export default {
@@ -39,7 +39,7 @@ export const table = () => (
       </TableBody>
     </Table>
 
-    <Table css={[mt[3], borderedTable]}>
+    <Table css={[mt[3], tableBordered]}>
       <TableHead>
         <TableRow>
           <TableHeadCell>ID</TableHeadCell>
@@ -78,7 +78,7 @@ export const table = () => (
       </TableBody>
     </Table>
 
-    <Table css={[mt[3], borderedTable]}>
+    <Table css={[mt[3], tableBordered]}>
       <TableBody>
         <TableRow>
           <TableHeadCell>Name</TableHeadCell>

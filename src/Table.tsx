@@ -41,17 +41,17 @@ export const TableCell = styled("td", [
   borderColor.gray3
 ]);
 
-const borderTableCellStyle = [
+const tableBorderedCellStyle = [
   border[1],
   borderSolid,
   borderColor.gray3,
   pseudoFirstChild(borderLeft[0])
 ];
 
-export const borderedTable = css([
+export const tableBordered = css([
   border[1],
   borderSolid,
   borderColor.gray3,
-  nest("td", "td")(borderTableCellStyle),
-  nest("th", "th")(borderTableCellStyle)
+  nest("td", "td")(tableBorderedCellStyle),
+  nest("th", "th")(tableBorderedCellStyle)
 ]);

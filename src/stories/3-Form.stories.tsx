@@ -1,43 +1,72 @@
 import * as React from "react";
 import { action } from "@storybook/addon-actions";
-import { mr, ml, mb, flex } from "@borderlesslabs/atoms";
+import { mr, ml, mb, flex, flexColumn } from "@borderlesslabs/atoms";
 import { Box, Input, Select, Label, InlineLabel, LabelText } from "../index";
+import { inputLarge, inputSmall, Textarea } from "../Input";
 
 export default {
   title: "Form"
 };
 
 export const input = () => (
-  <Box css={flex}>
-    <Label css={mr[2]}>
-      <LabelText css={mb[2]}>Default input:</LabelText>
-      <Input
-        onChange={action("change")}
-        onClick={action("click")}
-        defaultValue="Default Value"
-      />
-    </Label>
-    <Label css={mr[2]}>
-      <LabelText css={mb[2]}>Placeholder input:</LabelText>
-      <Input
-        placeholder="Placeholder value"
-        onChange={action("change")}
-        onClick={action("click")}
-      />
-    </Label>
-    <Label css={mr[2]}>
-      <LabelText css={mb[2]}>Disabled input:</LabelText>
-      <Input
-        placeholder="Disabled Input"
-        onChange={action("change")}
-        onClick={action("click")}
-        disabled
-      />
-    </Label>
-    <Label css={mr[2]}>
-      <LabelText css={mb[2]}>Required input:</LabelText>
-      <Input onChange={action("change")} onClick={action("click")} required />
-    </Label>
+  <Box css={[flex, flexColumn]}>
+    <Box css={[flex, mb[3]]}>
+      <Label css={mr[2]}>
+        <LabelText css={mb[2]}>Default input:</LabelText>
+        <Input
+          onChange={action("change")}
+          onClick={action("click")}
+          defaultValue="Default Value"
+        />
+      </Label>
+      <Label css={mr[2]}>
+        <LabelText css={mb[2]}>Placeholder input:</LabelText>
+        <Input
+          placeholder="Placeholder value"
+          onChange={action("change")}
+          onClick={action("click")}
+        />
+      </Label>
+      <Label css={mr[2]}>
+        <LabelText css={mb[2]}>Disabled input:</LabelText>
+        <Input
+          placeholder="Disabled Input"
+          onChange={action("change")}
+          onClick={action("click")}
+          disabled
+        />
+      </Label>
+      <Label css={mr[2]}>
+        <LabelText css={mb[2]}>Required input:</LabelText>
+        <Input onChange={action("change")} onClick={action("click")} required />
+      </Label>
+    </Box>
+
+    <Box css={[flex, mb[3]]}>
+      <Label css={mr[2]}>
+        <LabelText css={mb[2]}>Small input:</LabelText>
+        <Input
+          onChange={action("change")}
+          onClick={action("click")}
+          css={inputSmall}
+        />
+      </Label>
+      <Label css={mr[2]}>
+        <LabelText css={mb[2]}>Large input:</LabelText>
+        <Input
+          onChange={action("change")}
+          onClick={action("click")}
+          css={inputLarge}
+        />
+      </Label>
+    </Box>
+
+    <Box css={[flex, mb[3]]}>
+      <Label css={mr[2]}>
+        <LabelText css={mb[2]}>Text area:</LabelText>
+        <Textarea onChange={action("change")} onClick={action("click")} />
+      </Label>
+    </Box>
   </Box>
 );
 
