@@ -24,22 +24,22 @@ import { inputStandard } from "./Input";
 export const buttonPrimary = css([
   color.white,
   backgroundColor.indigo6,
-  pseudoHover(backgroundColor.indigo7, borderColor.transparent)
+  pseudoHover(backgroundColor.indigo7)
+]);
+
+export const buttonSecondary = css([
+  color.gray9,
+  backgroundColor.gray3,
+  pseudoHover(backgroundColor.gray4)
 ]);
 
 export const buttonOutline = css([
   color.indigo6,
-  backgroundColor.transparent,
   borderColor.indigo6,
-  pseudoHover(color.white, backgroundColor.indigo6, borderColor.transparent)
+  pseudoHover(color.white, backgroundColor.indigo6)
 ]);
 
-export const buttonMinimal = css([
-  color.indigo6,
-  backgroundColor.transparent,
-  borderColor.transparent,
-  pseudoHover(color.indigo7, backgroundColor.transparent)
-]);
+export const buttonMinimal = css([color.indigo6, pseudoHover(color.indigo7)]);
 
 export const buttonSuccess = css([
   color.white,
@@ -47,16 +47,16 @@ export const buttonSuccess = css([
   pseudoHover(backgroundColor.green7)
 ]);
 
-export const buttonDanger = css([
-  color.white,
-  backgroundColor.red6,
-  pseudoHover(backgroundColor.red7)
-]);
-
 export const buttonWarning = css([
   color.white,
   backgroundColor.orange6,
   pseudoHover(backgroundColor.orange7)
+]);
+
+export const buttonDanger = css([
+  color.white,
+  backgroundColor.red6,
+  pseudoHover(backgroundColor.red7)
 ]);
 
 export const button = css([
@@ -66,18 +66,15 @@ export const button = css([
   inlineFlex,
   justifyCenter,
   itemsCenter,
-  borderColor.transparent,
   rounded.m,
   outlineNone,
-  color.gray9,
   border[1],
   borderSolid,
   borderColor.transparent,
-  backgroundColor.gray2,
+  backgroundColor.transparent,
   pseudoFocus({
     boxShadow: `0 0 0 3px ${colorConfig.indigo2}`
   }),
-  pseudoHover(backgroundColor.gray3),
   pseudoDisabled(cursorNotAllowed, opacity50)
 ]);
 

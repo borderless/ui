@@ -33,10 +33,9 @@ import {
 } from "@borderlesslabs/atoms";
 
 export const inputSmall = css([fontSize.s, py[1], px[2], h[8]]);
-
 export const inputStandard = css([fontSize.m, py[2], px[3], h[10]]);
-
 export const inputLarge = css([fontSize.l, py[3], px[4], h[12]]);
+export const inputXLarge = css([fontSize.xl, py[4], px[6], h[16]]);
 
 export const Input = styled("input", [
   inputStandard,
@@ -95,12 +94,12 @@ export const Select = styled("select", [
   {
     backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23a0aec0'%3e%3cpath d='M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z'/%3e%3c/svg%3e")`,
     backgroundRepeat: "no-repeat",
-    backgroundPosition: `right 0.5em center`,
-    backgroundSize: `1.5em 1.5em`,
+    backgroundPosition: "right 0.5em center",
+    backgroundSize: "1.5em 1.5em",
     paddingRight: "2.5em",
     $displayName: "image"
   },
-  nest("&[multiple]", "multiple")({ backgroundImage: "none" }, pr[3])
+  nest("&[multiple]", "multiple")({ backgroundImage: "none" }, pr[3], h.auto)
 ]);
 
 export const Textarea = styled("textarea", [
