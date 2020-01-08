@@ -103,7 +103,7 @@
     "react": "*"
   },
   "dependencies": {
-    "@borderlesslabs/atoms": "^0.1.1",
+    "@borderlesslabs/atoms": "^0.2.1",
     "react-free-style": "^10.0.1"
   }
 }

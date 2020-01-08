@@ -5,9 +5,9 @@ import {
   borderColor,
   borderSolid,
   boxBorder,
-  colorConfig,
-  animationName
+  colorConfig
 } from "@borderlesslabs/atoms";
+import { animationName } from "./utilities";
 
 const Base = styled("div", [
   animationName({

@@ -1,6 +1,5 @@
 import { styled, css } from "react-free-style";
 import {
-  animationName,
   leading,
   color,
   colorConfig,
@@ -11,6 +10,7 @@ import {
   pseudoAfter,
   cursorDefault
 } from "@borderlesslabs/atoms";
+import { animationName } from "./utilities";
 
 export const loadingContent = css([
   animationName({
