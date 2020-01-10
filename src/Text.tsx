@@ -11,10 +11,10 @@ import {
 } from "@borderlesslabs/atoms";
 
 export const fontSans =
-  'system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"';
-export const fontSerif = 'Georgia, Cambria, "Times New Roman", Times, serif';
+  'system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"';
+export const fontSerif = 'Georgia,Cambria,"Times New Roman",Times,serif';
 export const fontMono =
-  'Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
+  'Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace';
 
 export const Paragraph = styled("p", [leading.normal]);
 
