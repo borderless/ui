@@ -1,6 +1,6 @@
 {
   "name": "@borderlesslabs/ui",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "UI components based on React Free Style and Atoms",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
