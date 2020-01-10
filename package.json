@@ -89,6 +89,7 @@
     "react": "^16.8.6",
     "react-docgen-typescript-loader": "^3.2.1",
     "react-dom": "^16.8.6",
+    "react-free-style": "^10.0.2",
     "rimraf": "^3.0.0",
     "ts-jest": "^24.1.0",
     "ts-loader": "^6.1.2",
@@ -98,10 +99,10 @@
     "typescript": "^3.7.2"
   },
   "peerDependencies": {
-    "react": "*"
+    "react": "*",
+    "react-free-style": "^10.0.0"
   },
   "dependencies": {
-    "@borderlesslabs/atoms": "^0.2.1",
-    "react-free-style": "^10.0.1"
+    "@borderlesslabs/atoms": "^0.2.1"
   }
 }
