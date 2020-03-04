@@ -39,7 +39,7 @@ export const loadingContent = css([
   backgroundFixed
 ]);
 
-export const FakeText = styled("span", [
+export const LoadingText = styled("span", [
   inlineBlock,
   leading.none,
   h.em,

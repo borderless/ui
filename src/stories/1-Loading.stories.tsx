@@ -12,7 +12,7 @@ import {
 import { Spinner } from "../Spinner";
 import { Box } from "../Box";
 import { Paragraph } from "../Text";
-import { FakeText, loadingContent } from "../Placeholder";
+import { LoadingText, loadingContent } from "../Placeholder";
 
 export default {
   title: "Loading"
@@ -27,12 +27,12 @@ export const placeholder = () => (
     <Box
       css={[inlineBlock, floatLeft, w[12], h[12], mr[3], mb[3], loadingContent]}
     />
-    <FakeText css={[loadingContent, { width: "50%" }]} />
+    <LoadingText css={[loadingContent, { width: "50%" }]} />
     <br />
-    <FakeText css={[loadingContent, { width: "20%" }]} />
+    <LoadingText css={[loadingContent, { width: "20%" }]} />
     <br />
-    <FakeText css={[loadingContent, { width: "60%" }]} />
+    <LoadingText css={[loadingContent, { width: "60%" }]} />
     <br />
-    <FakeText css={[loadingContent, { width: "30%" }]} />
+    <LoadingText css={[loadingContent, { width: "30%" }]} />
   </Paragraph>
 );
