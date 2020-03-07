@@ -17,7 +17,7 @@ const Base = styled("div", [
     }
   }),
   {
-    animationDuration: "1s",
+    animationDuration: ".5s",
     animationIterationCount: "infinite",
     animationTimingFunction: "linear"
   },
@@ -29,8 +29,8 @@ const Base = styled("div", [
 
 export function Spinner({
   size = 40,
-  width = 2,
-  color = colorConfig.gray4,
+  width = 4,
+  color = colorConfig.gray5,
   backgroundColor = colorConfig.gray1,
   css,
   ...props

@@ -29,7 +29,7 @@ export const loadingContent = css([
     animationTimingFunction: "linear",
     background: [
       colorConfig.gray2,
-      `linear-gradient(to right, ${colorConfig.gray2} 80px, ${colorConfig.gray4} 180px, ${colorConfig.gray2} 330px)`
+      `linear-gradient(to right, ${colorConfig.gray2} 80px, ${colorConfig.gray5} 180px, ${colorConfig.gray2} 330px)`
     ],
     backgroundSize: "2000px 100%"
   },
