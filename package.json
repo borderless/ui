@@ -71,12 +71,15 @@
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
-    "@storybook/addon-actions": "^5.2.8",
-    "@storybook/addon-info": "^5.2.8",
-    "@storybook/addon-knobs": "^5.2.8",
-    "@storybook/addon-links": "^5.2.8",
-    "@storybook/addons": "^5.2.8",
-    "@storybook/react": "^5.2.8",
+    "@storybook/addon-actions": "^5.3.17",
+    "@storybook/addon-contexts": "^5.3.17",
+    "@storybook/addon-docs": "^5.3.17",
+    "@storybook/addon-info": "^5.3.17",
+    "@storybook/addon-knobs": "^5.3.17",
+    "@storybook/addon-links": "^5.3.17",
+    "@storybook/addon-viewport": "^5.3.17",
+    "@storybook/addons": "^5.3.17",
+    "@storybook/react": "^5.3.17",
     "@types/jest": "^24.0.11",
     "@types/react": "^16.7.5",
     "@types/react-dom": "^16.0.9",
@@ -89,20 +92,21 @@
     "react": "^16.8.6",
     "react-docgen-typescript-loader": "^3.2.1",
     "react-dom": "^16.8.6",
-    "react-free-style": "^10.0.2",
+    "react-free-style": "^10.2.1",
     "rimraf": "^3.0.0",
     "ts-jest": "^24.1.0",
     "ts-loader": "^6.1.2",
     "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.16.0",
     "tslint-config-standard": "^9.0.0",
-    "typescript": "^3.7.2"
+    "typescript": "^3.8.3"
   },
   "peerDependencies": {
     "react": "*",
-    "react-free-style": "^10.0.0"
+    "react-free-style": "^10.2.1"
   },
   "dependencies": {
-    "@borderlesslabs/atoms": "^0.2.1"
+    "@borderlesslabs/atoms": "^0.2.3",
+    "uniqueid": "^1.0.0"
   }
 }

@@ -1,24 +1,17 @@
 import { styled } from "react-free-style";
-import {
-  py,
-  rounded,
-  px,
-  backgroundColor,
-  color,
-  pseudoHover,
-  boxShadow
-} from "@borderlesslabs/atoms";
+import { py, px, pseudoHover, boxShadow } from "@borderlesslabs/atoms";
+import { theme } from "./theme";
 
 export const Dropdown = styled("div", [
   py[2],
-  rounded.lg,
-  backgroundColor.white,
   boxShadow.s,
-  color.gray8
+  { color: `var(${theme.text1})`, backgroundColor: `var(${theme.ui1})` }
 ]);
 
 export const DropdownItem = styled("div", [
   py[2],
   px[4],
-  pseudoHover(color.white, backgroundColor.indigo5)
+  pseudoHover({
+    backgroundColor: `var(${theme.uiHover1})`
+  })
 ]);

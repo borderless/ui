@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Paragraph, Box, Code } from "../index";
+import { Link } from "../Text";
 
 export default {
   title: "Text"
@@ -36,5 +37,11 @@ export const paragraph = () => (
 export const code = () => (
   <Paragraph>
     Some <Code>code</Code> here.
+  </Paragraph>
+);
+
+export const link = () => (
+  <Paragraph>
+    A link to <Link href="http://example.com">example.com</Link> here.
   </Paragraph>
 );

@@ -1,5 +1,4 @@
 import * as React from "react";
-import { number } from "@storybook/addon-knobs";
 import {
   floatLeft,
   w,
@@ -18,9 +17,7 @@ export default {
   title: "Loading"
 };
 
-export const spinner = () => (
-  <Spinner size={number("Size", 40)} width={number("Width", 2)} />
-);
+export const spinner = () => <Spinner />;
 
 export const placeholder = () => (
   <Paragraph css={[clearFix]}>

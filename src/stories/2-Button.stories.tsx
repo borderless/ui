@@ -1,5 +1,4 @@
 import * as React from "react";
-import { action } from "@storybook/addon-actions";
 import { flex, flexColumn, mb, mr } from "@borderlesslabs/atoms";
 import {
   Box,
@@ -24,94 +23,43 @@ export const textButtons = () => {
   return (
     <Box css={[flex, flexColumn]}>
       <Box css={[flex, mb[3]]}>
-        <Button onClick={action("clicked")} css={mr[2]}>
+        <Button css={mr[2]}>Default Button</Button>
+        <Button css={[buttonPrimary, mr[2]]}>Primary Button</Button>
+        <Button css={[buttonSecondary, mr[2]]}>Secondary Button</Button>
+        <Button css={[buttonOutline, mr[2]]}>Outline Primary Button</Button>
+        <Button css={[buttonMinimal, mr[2]]}>Minimal Primary Button</Button>
+      </Box>
+
+      <Box css={[flex, mb[3]]}>
+        <Button css={mr[2]} disabled>
           Default Button
         </Button>
-        <Button onClick={action("clicked")} css={[buttonPrimary, mr[2]]}>
+        <Button css={[buttonPrimary, mr[2]]} disabled>
           Primary Button
         </Button>
-        <Button onClick={action("clicked")} css={[buttonSecondary, mr[2]]}>
+        <Button css={[buttonSecondary, mr[2]]} disabled>
           Secondary Button
         </Button>
-        <Button onClick={action("clicked")} css={[buttonOutline, mr[2]]}>
+        <Button css={[buttonOutline, mr[2]]} disabled>
           Outline Primary Button
         </Button>
-        <Button onClick={action("clicked")} css={[buttonMinimal, mr[2]]}>
+        <Button css={[buttonMinimal, mr[2]]} disabled>
           Minimal Primary Button
         </Button>
       </Box>
 
       <Box css={[flex, mb[3]]}>
-        <Button onClick={action("clicked")} css={mr[2]} disabled>
-          Default Button
-        </Button>
-        <Button
-          onClick={action("clicked")}
-          css={[buttonPrimary, mr[2]]}
-          disabled
-        >
-          Primary Button
-        </Button>
-        <Button
-          onClick={action("clicked")}
-          css={[buttonSecondary, mr[2]]}
-          disabled
-        >
-          Secondary Button
-        </Button>
-        <Button
-          onClick={action("clicked")}
-          css={[buttonOutline, mr[2]]}
-          disabled
-        >
-          Outline Primary Button
-        </Button>
-        <Button
-          onClick={action("clicked")}
-          css={[buttonMinimal, mr[2]]}
-          disabled
-        >
-          Minimal Primary Button
-        </Button>
-      </Box>
-
-      <Box css={[flex, mb[3]]}>
-        <Button onClick={action("clicked")} css={[buttonSuccess, mr[2]]}>
-          Success Button
-        </Button>
-        <Button onClick={action("clicked")} css={[buttonWarning, mr[2]]}>
-          Warning Button
-        </Button>
-        <Button onClick={action("clicked")} css={[buttonDanger, mr[2]]}>
-          Danger Button
-        </Button>
+        <Button css={[buttonSuccess, mr[2]]}>Success Button</Button>
+        <Button css={[buttonWarning, mr[2]]}>Warning Button</Button>
+        <Button css={[buttonDanger, mr[2]]}>Danger Button</Button>
       </Box>
       <Box css={[flex, mb[3]]}>
-        <Button onClick={action("clicked")} css={[inputSmall, mr[2]]}>
-          Default Button
-        </Button>
-        <Button
-          onClick={action("clicked")}
-          css={[inputSmall, buttonPrimary, mr[2]]}
-        >
-          Primary Button
-        </Button>
-        <Button onClick={action("clicked")} css={[inputLarge, mr[2]]}>
-          Default Button
-        </Button>
-        <Button
-          onClick={action("clicked")}
-          css={[inputLarge, buttonPrimary, mr[2]]}
-        >
-          Primary Button
-        </Button>
-        <Button onClick={action("clicked")} css={[inputXLarge, mr[2]]}>
-          Default Button
-        </Button>
-        <Button
-          onClick={action("clicked")}
-          css={[inputXLarge, buttonPrimary, mr[2]]}
-        >
+        <Button css={[inputSmall, mr[2]]}>Default Button</Button>
+        <Button css={[inputSmall, buttonPrimary, mr[2]]}>Primary Button</Button>
+        <Button css={[inputLarge, mr[2]]}>Default Button</Button>
+        <Button css={[inputLarge, buttonPrimary, mr[2]]}>Primary Button</Button>
+        <Button css={[inputXLarge, mr[2]]}>Default Button</Button>
+        <Button css={[inputXLarge, buttonPrimary, mr[2]]}>
           Primary Button
         </Button>
       </Box>

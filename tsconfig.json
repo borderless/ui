@@ -1,16 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es2015",
-    "lib": ["es2015", "dom"],
+    "target": "ES2018",
+    "lib": ["ES2018", "DOM"],
     "outDir": "dist",
     "rootDir": "src",
-    "moduleResolution": "node",
-    "module": "commonjs",
+    "moduleResolution": "Node",
+    "module": "CommonJS",
     "jsx": "react",
     "strict": true,
     "declaration": true,
     "sourceMap": true,
     "inlineSources": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "noUnusedLocals": true,
+    "allowSyntheticDefaultImports": true,
+    "types": ["jest"]
   }
 }

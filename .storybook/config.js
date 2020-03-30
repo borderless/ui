@@ -1,21 +1,49 @@
 import React from "react";
-import { configure, addDecorator } from "@storybook/react";
 import { StyleSheetRenderer, Context } from "react-free-style";
+import { addDecorator } from "@storybook/react";
+import { withContexts } from "@storybook/addon-contexts/react";
 import { withKnobs } from "@storybook/addon-knobs";
 import { p } from "@borderlesslabs/atoms";
-import { Container, globalCss } from "../src/index";
-
-const renderer = new StyleSheetRenderer(true);
+import { PreferredContainer, globalCss, invert } from "../src/index";
+import { darkTheme, lightTheme } from "../src/theme";
 
 addDecorator(withKnobs);
 
-addDecorator(storyFn => (
-  <Context.Provider value={renderer}>
-    <Container css={[globalCss, p[3]]}>{storyFn()}</Container>
+const ThemeComponent = ({ children, theme, invertTheme }) => (
+  <Context.Provider value={new StyleSheetRenderer(true)}>
+    <PreferredContainer
+      css={[globalCss, { "&&": theme }, { "&&": invert(invertTheme) }, p[3]]}
+    >
+      {children}
+    </PreferredContainer>
   </Context.Provider>
-));
+);
 
-configure(
-  require.context("../src/stories", false, /\.stories\.[tj]sx?$/),
-  module
+addDecorator(
+  withContexts([
+    {
+      icon: "box",
+      title: "Themes",
+      components: [ThemeComponent],
+      params: [
+        {
+          name: "Default",
+          props: { theme: {}, invertTheme: {} },
+          default: true
+        },
+        {
+          name: "Light",
+          props: { theme: lightTheme, invertTheme: darkTheme }
+        },
+        {
+          name: "Dark",
+          props: { theme: darkTheme, invertTheme: lightTheme }
+        }
+      ],
+      options: {
+        disable: false,
+        cancelable: false
+      }
+    }
+  ])
 );

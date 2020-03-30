@@ -2,42 +2,39 @@ import { styled, css } from "react-free-style";
 import {
   leading,
   color,
-  colorConfig,
   inlineBlock,
-  backgroundFixed,
   selectNone,
+  pointerEventsNone,
   h,
   pseudoAfter,
   cursorDefault
 } from "@borderlesslabs/atoms";
 import { animationName } from "./utilities";
+import { theme } from "./theme";
 
-export const loadingContent = css([
+export const loadingContent = css(
   animationName({
-    $displayName: "backgroundSlide",
+    $displayName: "backgroundFade",
     "0%": {
-      backgroundPosition: "-2000px 0"
+      backgroundColor: `var(${theme.uiHover1})`
     },
     "100%": {
-      backgroundPosition: "2000px 0"
+      backgroundColor: `var(${theme.uiActive1})`
     }
   }),
   {
-    $displayName: "slideAnimation",
-    animationDuration: "2s",
+    $displayName: "placeholderAnimation",
+    animationDuration: "1s",
     animationIterationCount: "infinite",
     animationTimingFunction: "linear",
-    background: [
-      colorConfig.gray2,
-      `linear-gradient(to right, ${colorConfig.gray2} 80px, ${colorConfig.gray5} 180px, ${colorConfig.gray2} 330px)`
-    ],
-    backgroundSize: "2000px 100%"
+    animationDirection: "alternate",
+    backgroundColor: `var(${theme.uiHover1})`
   },
   cursorDefault,
   color.transparent,
   selectNone,
-  backgroundFixed
-]);
+  pointerEventsNone
+);
 
 export const LoadingText = styled("span", [
   inlineBlock,
