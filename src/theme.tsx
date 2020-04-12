@@ -96,7 +96,7 @@ export const lightTheme: Css = {
     [themeVars.textUi]: colorConfig.red8,
     [themeVars.textPlaceholder]: colorConfig.red5,
     [themeVars.uiBackground]: colorConfig.red1,
-    [themeVars.uiBackgroundOffset]: colorConfig.red1,
+    [themeVars.uiBackgroundOffset]: colorConfig.red2,
     [themeVars.uiBorder]: colorConfig.red4,
     [themeVars.interactive]: colorConfig.red6,
     [themeVars.interactiveOffset]: colorConfig.red7,
@@ -121,7 +121,7 @@ export const lightTheme: Css = {
 
 export const darkTheme: Css = {
   [themeVars.text]: colorConfig.white,
-  [themeVars.textUi]: colorConfig.gray2,
+  [themeVars.textUi]: colorConfig.gray1,
   [themeVars.textPlaceholder]: colorConfig.gray6,
   [themeVars.background]: colorConfig.black,
   [themeVars.backgroundOffset]: colorConfig.gray9,
@@ -137,7 +137,7 @@ export const darkTheme: Css = {
   [themeVars.interactiveText]: colorConfig.white,
   [themeVars.focusRing]: colorConfig.gray8,
   ".brand": {
-    [themeVars.textUi]: colorConfig.indigo2,
+    [themeVars.textUi]: colorConfig.indigo1,
     [themeVars.textPlaceholder]: colorConfig.indigo3,
     [themeVars.uiBackground]: colorConfig.indigo9,
     [themeVars.uiBackgroundOffset]: colorConfig.indigo8,
@@ -148,7 +148,7 @@ export const darkTheme: Css = {
     [themeVars.focusRing]: colorConfig.indigo8,
   },
   ".info": {
-    [themeVars.textUi]: colorConfig.blue2,
+    [themeVars.textUi]: colorConfig.blue1,
     [themeVars.textPlaceholder]: colorConfig.blue3,
     [themeVars.uiBackground]: colorConfig.blue9,
     [themeVars.uiBackgroundOffset]: colorConfig.blue8,
@@ -159,7 +159,7 @@ export const darkTheme: Css = {
     [themeVars.focusRing]: colorConfig.blue8,
   },
   ".warning": {
-    [themeVars.textUi]: colorConfig.orange2,
+    [themeVars.textUi]: colorConfig.orange1,
     [themeVars.textPlaceholder]: colorConfig.orange3,
     [themeVars.uiBackground]: colorConfig.orange9,
     [themeVars.uiBackgroundOffset]: colorConfig.orange8,
@@ -170,7 +170,7 @@ export const darkTheme: Css = {
     [themeVars.focusRing]: colorConfig.orange8,
   },
   ".danger": {
-    [themeVars.textUi]: colorConfig.red2,
+    [themeVars.textUi]: colorConfig.red1,
     [themeVars.textPlaceholder]: colorConfig.red3,
     [themeVars.uiBackground]: colorConfig.red9,
     [themeVars.uiBackgroundOffset]: colorConfig.red8,
@@ -181,7 +181,7 @@ export const darkTheme: Css = {
     [themeVars.focusRing]: colorConfig.red8,
   },
   ".success": {
-    [themeVars.textUi]: colorConfig.green2,
+    [themeVars.textUi]: colorConfig.green1,
     [themeVars.textPlaceholder]: colorConfig.green3,
     [themeVars.uiBackground]: colorConfig.green9,
     [themeVars.uiBackgroundOffset]: colorConfig.green8,
