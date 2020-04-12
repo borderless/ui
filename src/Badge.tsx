@@ -22,10 +22,10 @@ export const Badge = styled("span", [
   rounded.sm,
 ]);
 
-export const BadgeBorder = styled("span", Badge.style, [
+export const BadgeOutline = styled("span", Badge.style, [
   border[1],
   borderSolid,
-  { borderColor: `var(${themeVars.uiOffset})` },
+  { borderColor: `var(${themeVars.uiBorder})` },
 ]);
 
 export const BadgeInteractive = styled("span", Badge.style, [

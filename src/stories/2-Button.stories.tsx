@@ -9,6 +9,7 @@ import {
   ButtonMinimal,
   ButtonOutline,
   ButtonPrimary,
+  SpinnerInline,
 } from "../index";
 
 export default {
@@ -23,6 +24,21 @@ export const buttons = () => {
         <ButtonPrimary css={mr[2]}>Primary</ButtonPrimary>
         <ButtonOutline css={mr[2]}>Outline</ButtonOutline>
         <ButtonMinimal css={mr[2]}>Minimal</ButtonMinimal>
+      </Box>
+
+      <Box css={[flex, mb[3]]}>
+        <Button css={mr[2]}>
+          <SpinnerInline css={mr[1]} /> Button
+        </Button>
+        <ButtonPrimary css={mr[2]}>
+          <SpinnerInline css={mr[1]} /> Primary
+        </ButtonPrimary>
+        <ButtonOutline css={mr[2]}>
+          <SpinnerInline css={mr[1]} /> Outline
+        </ButtonOutline>
+        <ButtonMinimal css={mr[2]}>
+          <SpinnerInline css={mr[1]} /> Minimal
+        </ButtonMinimal>
       </Box>
 
       <Box css={[flex, mb[3]]}>

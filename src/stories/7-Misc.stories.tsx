@@ -2,11 +2,12 @@ import * as React from "react";
 import {
   Badge,
   Box,
-  BadgeBorder,
+  BadgeOutline,
   BadgeInteractive,
   Card,
   CallOut,
   CallOutCard,
+  Progress,
 } from "../index";
 import { mr, p, flexColumn, mb } from "@borderlesslabs/atoms";
 
@@ -34,12 +35,24 @@ export const badges = () => (
       <Badge>Example</Badge>
     </Box>
     <Box css={mb[2]}>
-      <BadgeBorder css={mr[2]}>Example</BadgeBorder>
-      <BadgeBorder css={mr[2]}>Tag</BadgeBorder>
+      <BadgeOutline css={mr[2]}>Example</BadgeOutline>
+      <BadgeOutline css={mr[2]}>Tag</BadgeOutline>
     </Box>
     <Box css={mb[2]}>
       <BadgeInteractive css={mr[2]}>Example</BadgeInteractive>
       <BadgeInteractive css={mr[2]}>Tag</BadgeInteractive>
+    </Box>
+  </Box>
+);
+
+export const progress = () => (
+  <Box css={flexColumn}>
+    <Box css={mb[2]}>
+      <Progress />
+    </Box>
+
+    <Box css={mb[2]}>
+      <Progress value={80} max={100} />
     </Box>
   </Box>
 );

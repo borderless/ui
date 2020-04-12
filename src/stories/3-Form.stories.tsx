@@ -83,22 +83,46 @@ export const select = () => (
 
 export const radio = () => (
   <Box>
-    <LabelText css={mb[2]}>Select a value</LabelText>
-    <Box>
+    <LabelText css={mb[2]}>Select values</LabelText>
+    <Box css={mb[2]}>
       <InlineLabel>
-        <Input name="test" type="radio" css={mr[2]} /> Value 1
+        <Input name="test1" type="radio" css={mr[2]} /> Value 1
       </InlineLabel>
       <InlineLabel css={ml[8]}>
-        <Input name="test" type="radio" css={mr[2]} checked /> Value 2
+        <Input name="test1" type="radio" css={mr[2]} checked /> Value 2
+      </InlineLabel>
+    </Box>
+    <LabelText css={mb[2]}>Disabled values</LabelText>
+    <Box css={mb[2]}>
+      <InlineLabel>
+        <Input name="test2" type="radio" css={mr[2]} disabled /> Value 1
+      </InlineLabel>
+      <InlineLabel css={ml[8]}>
+        <Input name="test2" type="radio" css={mr[2]} checked disabled /> Value 2
       </InlineLabel>
     </Box>
   </Box>
 );
 
 export const checkbox = () => (
-  <Box>
-    <InlineLabel>
-      <Input name="test" type="checkbox" css={mr[2]} /> Check this box
-    </InlineLabel>
+  <Box css={flexColumn}>
+    <Box css={mb[2]}>
+      <InlineLabel css={mr[2]}>
+        <Input name="test1" type="checkbox" css={mr[2]} /> Check box
+      </InlineLabel>
+      <InlineLabel css={mr[2]}>
+        <Input name="test2" type="checkbox" css={mr[2]} checked /> Checked box
+      </InlineLabel>
+    </Box>
+    <Box css={mb[2]}>
+      <InlineLabel css={mr[2]}>
+        <Input name="test3" type="checkbox" css={mr[2]} disabled /> Disabled
+        check box
+      </InlineLabel>
+      <InlineLabel css={mr[2]}>
+        <Input name="test4" type="checkbox" css={mr[2]} checked disabled />{" "}
+        Disabled checked box
+      </InlineLabel>
+    </Box>
   </Box>
 );

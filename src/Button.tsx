@@ -14,6 +14,7 @@ import {
   cursorPointer,
   pseudoActive,
   rounded,
+  backgroundColor,
 } from "@borderlesslabs/atoms";
 import { inputStandard, focusRing } from "./Input";
 import { themeVars } from "./theme";
@@ -30,10 +31,10 @@ export const Button = styled("button", [
   borderSolid,
   rounded.sm,
   border[0],
-  {
-    backgroundColor: `var(${themeVars.background})`,
-  },
+  backgroundColor.transparent,
   focusRing,
+  pseudoHover({ backgroundColor: `var(${themeVars.uiBackground})` }),
+  pseudoActive({ backgroundColor: `var(${themeVars.uiBackgroundOffset})` }),
   pseudoDisabled(cursorNotAllowed, {
     color: `var(${themeVars.disabledText})`,
     backgroundColor: `var(${themeVars.disabledBackground})`,
@@ -57,11 +58,9 @@ export const ButtonMinimal = styled("button", Button.style, [
   { color: `var(${themeVars.interactive})` },
   pseudoHover({
     color: `var(${themeVars.textUi})`,
-    backgroundColor: `var(${themeVars.uiBackground})`,
   }),
   pseudoActive({
     color: `var(${themeVars.textUi})`,
-    backgroundColor: `var(${themeVars.uiOffset})`,
   }),
 ]);
 

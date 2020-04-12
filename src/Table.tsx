@@ -20,7 +20,7 @@ export const TableBody = styled("tbody");
 export const TableHead = styled("thead", [
   {
     color: `var(${themeVars.textUi})`,
-    backgroundColor: `var(${themeVars.uiBackground})`,
+    backgroundColor: `var(${themeVars.uiBackgroundOffset})`,
   },
 ]);
 
@@ -33,7 +33,7 @@ export const TableHeadCell = styled("th", [
   border[0],
   borderTop[1],
   borderSolid,
-  { borderColor: `var(${themeVars.uiOffset})` },
+  { borderColor: `var(${themeVars.uiBorder})` },
 ]);
 
 export const TableCell = styled("td", [
@@ -41,20 +41,20 @@ export const TableCell = styled("td", [
   border[0],
   borderTop[1],
   borderSolid,
-  { borderColor: `var(${themeVars.uiOffset})` },
+  { borderColor: `var(${themeVars.uiBorder})` },
 ]);
 
 const tableBorderedCellStyle = [
   border[1],
   borderSolid,
-  { borderColor: `var(${themeVars.uiOffset})` },
+  { borderColor: `var(${themeVars.uiBorder})` },
   pseudoFirstChild(borderLeft[0]),
 ];
 
 export const tableBordered = css(
   borderSolid,
   border[1],
-  { borderColor: `var(${themeVars.uiOffset})` },
+  { borderColor: `var(${themeVars.uiBorder})` },
   nest("td", "td")(tableBorderedCellStyle),
   nest("th", "th")(tableBorderedCellStyle)
 );

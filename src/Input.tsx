@@ -39,8 +39,8 @@ export const focusRing = css(
 export const Input = styled("input", [
   {
     color: `var(${themeVars.text})`,
-    backgroundColor: `var(${themeVars.uiBackground})`,
-    borderColor: `var(${themeVars.uiOffset})`,
+    backgroundColor: `var(${themeVars.backgroundOffset})`,
+    borderColor: `var(${themeVars.uiBorder})`,
   },
   inputStandard,
   appearanceNone,
@@ -67,6 +67,9 @@ export const Input = styled("input", [
     rounded.full,
     w.em,
     h.em,
+    pseudoDisabled(cursorNotAllowed, {
+      color: `var(${themeVars.disabledOffset})`,
+    }),
     pseudoChecked(backgroundColor.current, {
       backgroundImage: `var(${themeVars.radioImage})`,
       backgroundSize: "100% 100%",
@@ -81,6 +84,9 @@ export const Input = styled("input", [
     flexShrink0,
     w.em,
     h.em,
+    pseudoDisabled(cursorNotAllowed, {
+      color: `var(${themeVars.disabledOffset})`,
+    }),
     pseudoChecked(backgroundColor.current, {
       backgroundImage: `var(${themeVars.checkboxImage})`,
       backgroundSize: "100% 100%",

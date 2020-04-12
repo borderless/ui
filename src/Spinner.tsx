@@ -1,30 +1,30 @@
 import * as React from "react";
-import { styled, Css } from "react-free-style";
+import { styled } from "react-free-style";
 import {
   rounded,
   borderColor,
   borderSolid,
   boxBorder,
-  colorConfig
+  colorConfig,
 } from "@borderlesslabs/atoms";
 import { animationName } from "./utilities";
 
-const Base = styled("div", [
+const BaseSpinner = styled("div", [
   animationName({
     $displayName: "spinner",
     to: {
-      transform: `rotate(360deg)`
-    }
+      transform: `rotate(360deg)`,
+    },
   }),
   {
-    animationDuration: ".5s",
+    animationDuration: "1s",
     animationIterationCount: "infinite",
-    animationTimingFunction: "linear"
+    animationTimingFunction: "ease-in-out",
   },
   boxBorder,
   rounded.full,
   borderSolid,
-  borderColor.transparent
+  borderColor.transparent,
 ]);
 
 export function Spinner({
@@ -34,26 +34,29 @@ export function Spinner({
   backgroundColor = colorConfig.transparent,
   css,
   ...props
-}: Omit<JSX.IntrinsicElements["div"], "ref"> & {
-  css?: Css;
+}: JSX.IntrinsicElements["div"] & {
   size?: number | string;
   width?: number | string;
   color?: string;
   backgroundColor?: string;
 }) {
   return (
-    <Base
+    <BaseSpinner
       css={[
         {
           width: size,
           height: size,
           borderWidth: width,
           borderColor: backgroundColor,
-          borderRightColor: color
+          borderLeftColor: color,
         },
-        css
+        css,
       ]}
       {...props}
     />
   );
 }
+
+export const SpinnerInline = (props: JSX.IntrinsicElements["div"]) => (
+  <Spinner size="1em" width={2} {...props} />
+);

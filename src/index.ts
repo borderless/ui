@@ -7,6 +7,7 @@ export * from "./Card";
 export * from "./Dropdown";
 export * from "./Input";
 export * from "./Loading";
+export * from "./Progress";
 export * from "./Spinner";
 export * from "./Table";
 export * from "./Text";

@@ -33,7 +33,7 @@ export const Code = styled("code", [
   { fontFamily: fontMono },
   {
     color: `var(${themeVars.textUi})`,
-    backgroundColor: `var(${themeVars.uiOffset})`,
+    backgroundColor: `var(${themeVars.uiBackground})`,
   },
 ]);
 
@@ -55,5 +55,5 @@ export const Divider = styled("hr", [
   borderSolid,
   border[0],
   borderTop[1],
-  { borderColor: `var(${themeVars.uiOffset})` },
+  { borderColor: `var(${themeVars.uiBorder})` },
 ]);

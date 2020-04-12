@@ -19,7 +19,7 @@ export const CallOut = styled("div", [
   border[0],
   borderLeft[2],
   {
-    borderColor: `var(${themeVars.uiOffset})`,
+    borderColor: `var(${themeVars.uiBorder})`,
   },
 ]);
 
