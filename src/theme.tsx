@@ -4,116 +4,176 @@ import { Css } from "react-free-style";
 
 const seq = uniqueid("--ui");
 
-export const theme = {
-  background: seq(), // Page background.
-  ui1: seq(), // Container background.
-  ui2: seq(), // Borders, tertiary background.
-  uiHover1: seq(), // UI interactivity.
-  uiActive1: seq(),
-  text1: seq(), // Primary text.
-  text2: seq(), // Secondary text, labels.
-  text3: seq(), // Help text.
-  placeholder1: seq(), // Placeholder text.
-  interactive1: seq(), // Primary interactive item.
-  interactiveText1: seq(),
-  interactiveHover1: seq(),
-  interactiveActive1: seq(),
-  interactive2: seq(), // Secondary interactive item.
-  interactiveText2: seq(),
-  interactiveHover2: seq(),
-  interactiveActive2: seq(),
-  link1: seq(), // Link color.
-  field1: seq(), // Field background.
-  info1: seq(), // Info colors.
-  infoHover1: seq(),
-  infoActive1: seq(),
-  warning1: seq(), // Warning colors.
-  warningHover1: seq(),
-  warningActive1: seq(),
-  danger1: seq(), // Danger colors.
-  dangerHover1: seq(),
-  dangerActive1: seq(),
-  success1: seq(), // Success colors.
-  successHover1: seq(),
-  successActive1: seq(),
-  focus1: seq(), // Focus color.
+export const themeVars = {
+  /** Primary text. */
+  text: seq(),
+  /** UI text for UI backgrounds. */
+  textUi: seq(),
+  /** Placeholder text. */
+  textPlaceholder: seq(),
+  /** Page background. */
+  background: seq(),
+  /** Disabled background. */
+  disabledBackground: seq(),
+  /** Disabled offset color. */
+  disabledOffset: seq(),
+  /** Disabled borders, tertiary color. */
+  disabledText: seq(),
+  /** Container background. */
+  uiBackground: seq(),
+  /** Container background offset. */
+  uiOffset: seq(),
+  /** Primary interactive item. */
+  interactive: seq(),
+  /** Interactive interaction. */
+  interactiveOffset: seq(),
+  /** Interactive focus/active. */
+  interactiveActive: seq(),
+  /** Text color on interactive elements. */
+  interactiveText: seq(),
+  /** Focus ring outline. */
+  focusRing: seq(),
   checkboxImage: seq(),
   radioImage: seq(),
-  selectImage: seq()
+  selectImage: seq(),
 };
 
 export const lightTheme: Css = {
-  [theme.background]: colorConfig.white,
-  [theme.ui1]: colorConfig.gray1,
-  [theme.ui2]: colorConfig.gray2,
-  [theme.uiHover1]: colorConfig.gray3,
-  [theme.uiActive1]: colorConfig.gray4,
-  [theme.text1]: colorConfig.black,
-  [theme.text2]: colorConfig.gray8,
-  [theme.text3]: colorConfig.gray6,
-  [theme.placeholder1]: colorConfig.gray5,
-  [theme.interactive1]: colorConfig.indigo6,
-  [theme.interactiveText1]: colorConfig.white,
-  [theme.interactiveHover1]: colorConfig.indigo7,
-  [theme.interactiveActive1]: colorConfig.indigo8,
-  [theme.interactive2]: colorConfig.gray8,
-  [theme.interactiveText2]: colorConfig.white,
-  [theme.interactiveHover2]: colorConfig.gray7,
-  [theme.interactiveActive2]: colorConfig.gray6,
-  [theme.field1]: colorConfig.gray1,
-  [theme.link1]: colorConfig.indigo7,
-  [theme.info1]: colorConfig.blue6,
-  [theme.infoHover1]: colorConfig.blue7,
-  [theme.infoActive1]: colorConfig.blue8,
-  [theme.warning1]: colorConfig.orange6,
-  [theme.warningHover1]: colorConfig.orange7,
-  [theme.warningActive1]: colorConfig.orange8,
-  [theme.danger1]: colorConfig.red6,
-  [theme.dangerHover1]: colorConfig.red7,
-  [theme.dangerActive1]: colorConfig.red8,
-  [theme.success1]: colorConfig.green6,
-  [theme.successHover1]: colorConfig.green7,
-  [theme.successActive1]: colorConfig.green8,
-  [theme.focus1]: colorConfig.indigo5,
-  [theme.radioImage]: `url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e")`,
-  [theme.checkboxImage]: `url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e")`,
-  [theme.selectImage]: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3e%3cpath d='M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z'/%3e%3c/svg%3e")`
+  [themeVars.text]: colorConfig.black,
+  [themeVars.textUi]: colorConfig.gray8,
+  [themeVars.textPlaceholder]: colorConfig.gray5,
+  [themeVars.background]: colorConfig.white,
+  [themeVars.disabledBackground]: colorConfig.gray1,
+  [themeVars.disabledOffset]: colorConfig.gray2,
+  [themeVars.disabledText]: colorConfig.gray3,
+  [themeVars.uiBackground]: colorConfig.gray2,
+  [themeVars.uiOffset]: colorConfig.gray4,
+  [themeVars.interactive]: colorConfig.gray6,
+  [themeVars.interactiveOffset]: colorConfig.gray7,
+  [themeVars.interactiveActive]: colorConfig.gray8,
+  [themeVars.interactiveText]: colorConfig.white,
+  [themeVars.focusRing]: colorConfig.gray1,
+  ".brand": {
+    [themeVars.textUi]: colorConfig.indigo8,
+    [themeVars.textPlaceholder]: colorConfig.indigo5,
+    [themeVars.uiBackground]: colorConfig.indigo1,
+    [themeVars.uiOffset]: colorConfig.indigo3,
+    [themeVars.interactive]: colorConfig.indigo6,
+    [themeVars.interactiveOffset]: colorConfig.indigo7,
+    [themeVars.interactiveActive]: colorConfig.indigo8,
+    [themeVars.focusRing]: colorConfig.indigo2,
+  },
+  ".info": {
+    [themeVars.textUi]: colorConfig.blue8,
+    [themeVars.textPlaceholder]: colorConfig.blue5,
+    [themeVars.uiBackground]: colorConfig.blue1,
+    [themeVars.uiOffset]: colorConfig.blue3,
+    [themeVars.interactive]: colorConfig.blue6,
+    [themeVars.interactiveOffset]: colorConfig.blue7,
+    [themeVars.interactiveActive]: colorConfig.blue8,
+    [themeVars.focusRing]: colorConfig.blue2,
+  },
+  ".warning": {
+    [themeVars.textUi]: colorConfig.orange8,
+    [themeVars.textPlaceholder]: colorConfig.orange5,
+    [themeVars.uiBackground]: colorConfig.orange1,
+    [themeVars.uiOffset]: colorConfig.orange3,
+    [themeVars.interactive]: colorConfig.orange6,
+    [themeVars.interactiveOffset]: colorConfig.orange7,
+    [themeVars.interactiveActive]: colorConfig.orange8,
+    [themeVars.focusRing]: colorConfig.orange2,
+  },
+  ".danger": {
+    [themeVars.textUi]: colorConfig.red8,
+    [themeVars.textPlaceholder]: colorConfig.red5,
+    [themeVars.uiBackground]: colorConfig.red1,
+    [themeVars.uiOffset]: colorConfig.red3,
+    [themeVars.interactive]: colorConfig.red6,
+    [themeVars.interactiveOffset]: colorConfig.red7,
+    [themeVars.interactiveActive]: colorConfig.red8,
+    [themeVars.focusRing]: colorConfig.red2,
+  },
+  ".success": {
+    [themeVars.textUi]: colorConfig.green8,
+    [themeVars.textPlaceholder]: colorConfig.green5,
+    [themeVars.uiBackground]: colorConfig.green1,
+    [themeVars.uiOffset]: colorConfig.green3,
+    [themeVars.interactive]: colorConfig.green6,
+    [themeVars.interactiveOffset]: colorConfig.green7,
+    [themeVars.interactiveActive]: colorConfig.green8,
+    [themeVars.focusRing]: colorConfig.green2,
+  },
+  [themeVars.radioImage]: `url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e")`,
+  [themeVars.checkboxImage]: `url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e")`,
+  [themeVars.selectImage]: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='black'%3e%3cpath d='M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z'/%3e%3c/svg%3e")`,
 };
 
 export const darkTheme: Css = {
-  [theme.background]: colorConfig.black,
-  [theme.ui1]: colorConfig.gray8,
-  [theme.ui2]: colorConfig.gray7,
-  [theme.uiHover1]: colorConfig.gray6,
-  [theme.uiActive1]: colorConfig.gray5,
-  [theme.text1]: colorConfig.white,
-  [theme.text2]: colorConfig.gray2,
-  [theme.text3]: colorConfig.gray4,
-  [theme.placeholder1]: colorConfig.gray5,
-  [theme.interactive1]: colorConfig.indigo6,
-  [theme.interactiveText1]: colorConfig.white,
-  [theme.interactiveHover1]: colorConfig.indigo7,
-  [theme.interactiveActive1]: colorConfig.indigo8,
-  [theme.interactive2]: colorConfig.gray8,
-  [theme.interactiveText2]: colorConfig.white,
-  [theme.interactiveHover2]: colorConfig.gray7,
-  [theme.interactiveActive2]: colorConfig.gray6,
-  [theme.field1]: colorConfig.gray9,
-  [theme.link1]: colorConfig.indigo5,
-  [theme.info1]: colorConfig.blue6,
-  [theme.infoHover1]: colorConfig.blue7,
-  [theme.infoActive1]: colorConfig.blue8,
-  [theme.warning1]: colorConfig.orange6,
-  [theme.warningHover1]: colorConfig.orange7,
-  [theme.warningActive1]: colorConfig.orange8,
-  [theme.danger1]: colorConfig.red6,
-  [theme.dangerHover1]: colorConfig.red7,
-  [theme.dangerActive1]: colorConfig.red8,
-  [theme.success1]: colorConfig.green6,
-  [theme.successHover1]: colorConfig.green7,
-  [theme.successActive1]: colorConfig.green8,
-  [theme.focus1]: colorConfig.gray1,
-  [theme.radioImage]: `url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e")`,
-  [theme.checkboxImage]: `url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e")`,
-  [theme.selectImage]: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z'/%3e%3c/svg%3e")`
+  [themeVars.text]: colorConfig.white,
+  [themeVars.textUi]: colorConfig.gray2,
+  [themeVars.textPlaceholder]: colorConfig.gray6,
+  [themeVars.background]: colorConfig.black,
+  [themeVars.disabledBackground]: colorConfig.gray9,
+  [themeVars.disabledOffset]: colorConfig.gray8,
+  [themeVars.disabledText]: colorConfig.gray7,
+  [themeVars.uiBackground]: colorConfig.gray9,
+  [themeVars.uiOffset]: colorConfig.gray7,
+  [themeVars.interactive]: colorConfig.gray6,
+  [themeVars.interactiveOffset]: colorConfig.gray5,
+  [themeVars.interactiveActive]: colorConfig.gray4,
+  [themeVars.interactiveText]: colorConfig.white,
+  [themeVars.focusRing]: colorConfig.gray8,
+  ".brand": {
+    [themeVars.textUi]: colorConfig.indigo2,
+    [themeVars.textPlaceholder]: colorConfig.indigo3,
+    [themeVars.uiBackground]: colorConfig.indigo9,
+    [themeVars.uiOffset]: colorConfig.indigo7,
+    [themeVars.interactive]: colorConfig.indigo6,
+    [themeVars.interactiveOffset]: colorConfig.indigo5,
+    [themeVars.interactiveActive]: colorConfig.indigo4,
+    [themeVars.focusRing]: colorConfig.indigo8,
+  },
+  ".info": {
+    [themeVars.textUi]: colorConfig.blue2,
+    [themeVars.textPlaceholder]: colorConfig.blue3,
+    [themeVars.uiBackground]: colorConfig.blue9,
+    [themeVars.uiOffset]: colorConfig.blue7,
+    [themeVars.interactive]: colorConfig.blue6,
+    [themeVars.interactiveOffset]: colorConfig.blue5,
+    [themeVars.interactiveActive]: colorConfig.blue4,
+    [themeVars.focusRing]: colorConfig.blue8,
+  },
+  ".warning": {
+    [themeVars.textUi]: colorConfig.orange2,
+    [themeVars.textPlaceholder]: colorConfig.orange3,
+    [themeVars.uiBackground]: colorConfig.orange9,
+    [themeVars.uiOffset]: colorConfig.orange7,
+    [themeVars.interactive]: colorConfig.orange6,
+    [themeVars.interactiveOffset]: colorConfig.orange5,
+    [themeVars.interactiveActive]: colorConfig.orange4,
+    [themeVars.focusRing]: colorConfig.orange8,
+  },
+  ".danger": {
+    [themeVars.textUi]: colorConfig.red2,
+    [themeVars.textPlaceholder]: colorConfig.red3,
+    [themeVars.uiBackground]: colorConfig.red9,
+    [themeVars.uiOffset]: colorConfig.red7,
+    [themeVars.interactive]: colorConfig.red6,
+    [themeVars.interactiveOffset]: colorConfig.red5,
+    [themeVars.interactiveActive]: colorConfig.red4,
+    [themeVars.focusRing]: colorConfig.red8,
+  },
+  ".success": {
+    [themeVars.textUi]: colorConfig.green2,
+    [themeVars.textPlaceholder]: colorConfig.green3,
+    [themeVars.uiBackground]: colorConfig.green9,
+    [themeVars.uiOffset]: colorConfig.green7,
+    [themeVars.interactive]: colorConfig.green6,
+    [themeVars.interactiveOffset]: colorConfig.green5,
+    [themeVars.interactiveActive]: colorConfig.green4,
+    [themeVars.focusRing]: colorConfig.green8,
+  },
+  [themeVars.radioImage]: `url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='8' cy='8' r='3'/%3e%3c/svg%3e")`,
+  [themeVars.checkboxImage]: `url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e")`,
+  [themeVars.selectImage]: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M15.3 9.3a1 1 0 0 1 1.4 1.4l-4 4a1 1 0 0 1-1.4 0l-4-4a1 1 0 0 1 1.4-1.4l3.3 3.29 3.3-3.3z'/%3e%3c/svg%3e")`,
 };

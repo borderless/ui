@@ -20,6 +20,18 @@ npm install @borderlesslabs/ui --save
 import { Button } from "@borderlesslabs/ui";
 ```
 
+## References
+
+- [Tailwind CSS](https://tailwindcss.com)
+- [Tailwind UI](https://tailwindui.com)
+- [Carbon Design System](https://www.carbondesignsystem.com)
+- [Pure CSS Layouts](https://purecss.io/layouts/)
+- [BlueprintJS](https://blueprintjs.com)
+- [Chakra UI](https://chakra-ui.com)
+- [StackOverflow Design](https://stackoverflow.design)
+- [Orbit](https://orbit.kiwi)
+- [Color - Human Interface Guidelines - Apple](https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/)
+
 ## License
 
 MIT

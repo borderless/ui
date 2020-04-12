@@ -4,46 +4,95 @@ import { addDecorator } from "@storybook/react";
 import { withContexts } from "@storybook/addon-contexts/react";
 import { withKnobs } from "@storybook/addon-knobs";
 import { p } from "@borderlesslabs/atoms";
-import { PreferredContainer, globalCss, invert } from "../src/index";
-import { darkTheme, lightTheme } from "../src/theme";
+import {
+  Container,
+  globalStyles,
+  invert,
+  defaultTheme,
+  darkTheme,
+  lightTheme,
+} from "../src/index";
 
 addDecorator(withKnobs);
 
-const ThemeComponent = ({ children, theme, invertTheme }) => (
+const ThemeComponent = ({ children, className, theme, invertTheme }) => (
   <Context.Provider value={new StyleSheetRenderer(true)}>
-    <PreferredContainer
-      css={[globalCss, { "&&": theme }, { "&&": invert(invertTheme) }, p[3]]}
+    <Container
+      className={className}
+      css={[
+        globalStyles,
+        defaultTheme,
+        { "&&": theme },
+        { "&&": { ".invert": invertTheme } },
+        p[3],
+      ]}
     >
       {children}
-    </PreferredContainer>
+    </Container>
   </Context.Provider>
+);
+
+const ZoneComponent = ({ children, className }) => (
+  <div className={className}>{children}</div>
 );
 
 addDecorator(
   withContexts([
     {
-      icon: "box",
+      icon: "photo",
       title: "Themes",
       components: [ThemeComponent],
       params: [
         {
           name: "Default",
           props: { theme: {}, invertTheme: {} },
-          default: true
+          default: true,
         },
         {
           name: "Light",
-          props: { theme: lightTheme, invertTheme: darkTheme }
+          props: { theme: lightTheme, invertTheme: darkTheme },
         },
         {
           name: "Dark",
-          props: { theme: darkTheme, invertTheme: lightTheme }
-        }
+          props: { theme: darkTheme, invertTheme: lightTheme },
+        },
       ],
       options: {
         disable: false,
-        cancelable: false
-      }
-    }
+        cancelable: false,
+      },
+    },
+    {
+      icon: "category",
+      title: "Zones",
+      components: [ZoneComponent],
+      params: [
+        {
+          name: "None",
+          props: { className: "" },
+          default: true,
+        },
+        {
+          name: "Brand",
+          props: { className: "brand" },
+        },
+        {
+          name: "Info",
+          props: { className: "info" },
+        },
+        {
+          name: "Warning",
+          props: { className: "warning" },
+        },
+        {
+          name: "Danger",
+          props: { className: "danger" },
+        },
+        {
+          name: "Success",
+          props: { className: "success" },
+        },
+      ],
+    },
   ])
 );

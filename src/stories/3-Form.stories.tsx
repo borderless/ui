@@ -4,7 +4,7 @@ import { Box, Input, Select, Label, InlineLabel, LabelText } from "../index";
 import { inputLarge, inputSmall, Textarea } from "../Input";
 
 export default {
-  title: "Form"
+  title: "Form",
 };
 
 export const input = () => (
@@ -20,7 +20,7 @@ export const input = () => (
       </Label>
       <Label css={mr[2]}>
         <LabelText css={mb[2]}>Disabled input:</LabelText>
-        <Input placeholder="Disabled Input" disabled />
+        <Input defaultValue="Disabled Input" disabled />
       </Label>
       <Label css={mr[2]}>
         <LabelText css={mb[2]}>Required input:</LabelText>

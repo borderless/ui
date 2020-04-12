@@ -7,20 +7,20 @@ import {
   pointerEventsNone,
   h,
   pseudoAfter,
-  cursorDefault
+  cursorDefault,
 } from "@borderlesslabs/atoms";
 import { animationName } from "./utilities";
-import { theme } from "./theme";
+import { themeVars } from "./theme";
 
-export const loadingContent = css(
+export const loadingStyle = css(
   animationName({
     $displayName: "backgroundFade",
     "0%": {
-      backgroundColor: `var(${theme.uiHover1})`
+      backgroundColor: `var(${themeVars.text})`,
     },
     "100%": {
-      backgroundColor: `var(${theme.uiActive1})`
-    }
+      backgroundColor: `var(${themeVars.background})`,
+    },
   }),
   {
     $displayName: "placeholderAnimation",
@@ -28,7 +28,7 @@ export const loadingContent = css(
     animationIterationCount: "infinite",
     animationTimingFunction: "linear",
     animationDirection: "alternate",
-    backgroundColor: `var(${theme.uiHover1})`
+    backgroundColor: `var(${themeVars.text})`,
   },
   cursorDefault,
   color.transparent,
@@ -42,6 +42,6 @@ export const LoadingText = styled("span", [
   h.em,
   pseudoAfter({
     content: '""',
-    display: "inline-block"
-  })
+    display: "inline-block",
+  }),
 ]);

@@ -9,9 +9,9 @@ import {
   borderCollapse,
   nest,
   pseudoFirstChild,
-  borderLeft
+  borderLeft,
 } from "@borderlesslabs/atoms";
-import { theme } from "./theme";
+import { themeVars } from "./theme";
 
 export const Table = styled("table", [borderCollapse]);
 
@@ -19,9 +19,9 @@ export const TableBody = styled("tbody");
 
 export const TableHead = styled("thead", [
   {
-    color: `var(${theme.text2})`,
-    backgroundColor: `var(${theme.ui1})`
-  }
+    color: `var(${themeVars.textUi})`,
+    backgroundColor: `var(${themeVars.uiBackground})`,
+  },
 ]);
 
 export const TableRow = styled("tr");
@@ -33,7 +33,7 @@ export const TableHeadCell = styled("th", [
   border[0],
   borderTop[1],
   borderSolid,
-  { borderColor: `var(${theme.ui2})` }
+  { borderColor: `var(${themeVars.uiOffset})` },
 ]);
 
 export const TableCell = styled("td", [
@@ -41,20 +41,20 @@ export const TableCell = styled("td", [
   border[0],
   borderTop[1],
   borderSolid,
-  { borderColor: `var(${theme.ui2})` }
+  { borderColor: `var(${themeVars.uiOffset})` },
 ]);
 
 const tableBorderedCellStyle = [
   border[1],
   borderSolid,
-  { borderColor: `var(${theme.ui2})` },
-  pseudoFirstChild(borderLeft[0])
+  { borderColor: `var(${themeVars.uiOffset})` },
+  pseudoFirstChild(borderLeft[0]),
 ];
 
 export const tableBordered = css(
-  border[1],
   borderSolid,
-  { borderColor: `var(${theme.ui2})` },
+  border[1],
+  { borderColor: `var(${themeVars.uiOffset})` },
   nest("td", "td")(tableBorderedCellStyle),
   nest("th", "th")(tableBorderedCellStyle)
 );

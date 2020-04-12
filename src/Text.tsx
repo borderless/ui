@@ -5,9 +5,16 @@ import {
   inlineBlock,
   whitespaceNoWrap,
   alignBaseline,
-  pseudoHover
+  pseudoHover,
+  rounded,
+  block,
+  inlineFlex,
+  itemsCenter,
+  border,
+  borderTop,
+  borderSolid,
 } from "@borderlesslabs/atoms";
-import { theme } from "./theme";
+import { themeVars } from "./theme";
 
 export const fontSans =
   "system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji";
@@ -22,15 +29,31 @@ export const Code = styled("code", [
   px[1],
   whitespaceNoWrap,
   alignBaseline,
+  rounded.sm,
   { fontFamily: fontMono },
   {
-    color: `var(${theme.text2})`,
-    backgroundColor: `var(${theme.ui2})`
-  }
+    color: `var(${themeVars.textUi})`,
+    backgroundColor: `var(${themeVars.uiOffset})`,
+  },
 ]);
 
 export const Link = styled("a", [
-  { color: `var(${theme.link1})` },
+  { color: `var(${themeVars.interactive})` },
   { textDecoration: "none" },
-  pseudoHover({ textDecoration: "underline" })
+  pseudoHover({ textDecoration: "underline" }),
+]);
+
+export const Label = styled("label", [block]);
+
+export const InlineLabel = styled("label", [inlineFlex, itemsCenter]);
+
+export const LabelText = styled("div");
+
+export const HelpText = styled("div", [{ color: `var(${themeVars.textUi})` }]);
+
+export const Divider = styled("hr", [
+  borderSolid,
+  border[0],
+  borderTop[1],
+  { borderColor: `var(${themeVars.uiOffset})` },
 ]);
