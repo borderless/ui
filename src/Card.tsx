@@ -7,6 +7,15 @@ import {
   rounded,
 } from "@borderlesslabs/atoms";
 
+export const Outline = styled("div", [
+  borderSolid,
+  border[1],
+  rounded.m,
+  {
+    borderColor: `var(${themeVars.uiBorder})`,
+  },
+]);
+
 export const Card = styled("div", [
   rounded.m,
   {
@@ -14,10 +23,18 @@ export const Card = styled("div", [
   },
 ]);
 
+export const CardOutline = styled("div", Card.style, [
+  borderSolid,
+  border[1],
+  {
+    borderColor: `var(${themeVars.uiBorder})`,
+  },
+]);
+
 export const CallOut = styled("div", [
   borderSolid,
   border[0],
-  borderLeft[2],
+  borderLeft[4],
   {
     borderColor: `var(${themeVars.uiBorder})`,
   },

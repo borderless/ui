@@ -1,7 +1,20 @@
-import * as React from "react";
-import { mr, ml, mb, flex, flexColumn } from "@borderlesslabs/atoms";
-import { Box, Input, Select, Label, InlineLabel, LabelText } from "../index";
-import { inputLarge, inputSmall, Textarea } from "../Input";
+import React from "react";
+import {
+  mr,
+  ml,
+  mb,
+  flex,
+  flexColumn,
+  Box,
+  Input,
+  Select,
+  Label,
+  InlineLabel,
+  LabelText,
+  inputLarge,
+  inputSmall,
+  Textarea,
+} from "../index";
 
 export default {
   title: "Form",

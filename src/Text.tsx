@@ -13,6 +13,7 @@ import {
   border,
   borderTop,
   borderSolid,
+  fontWeight,
 } from "@borderlesslabs/atoms";
 import { themeVars } from "./theme";
 
@@ -57,3 +58,5 @@ export const Divider = styled("hr", [
   borderTop[1],
   { borderColor: `var(${themeVars.uiBorder})` },
 ]);
+
+export const Strong = styled("strong", [fontWeight.bold]);

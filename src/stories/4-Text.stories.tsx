@@ -1,9 +1,9 @@
-import * as React from "react";
+import React from "react";
 import { Paragraph, Box, Code } from "../index";
 import { Link } from "../Text";
 
 export default {
-  title: "Text"
+  title: "Text",
 };
 
 export const paragraph = () => (

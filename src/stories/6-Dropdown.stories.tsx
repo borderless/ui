@@ -1,8 +1,8 @@
-import * as React from "react";
+import React from "react";
 import { Box, Dropdown, DropdownItem } from "../index";
 
 export default {
-  title: "Dropdown"
+  title: "Dropdown",
 };
 
 export const dropdown = () => (

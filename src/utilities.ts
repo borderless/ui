@@ -16,18 +16,22 @@ import { lightTheme, darkTheme, themeVars } from "./theme";
 export const invert = nest(".invert", "invert");
 
 /**
+ * Root (`:root`) selector.
+ */
+export const root = nest(":root", "root", true);
+
+/**
  * Global styles for building applications.
  */
-export const globalStyles = css((f) =>
-  f.registerCss({
-    html: {
-      WebkitTextSizeAdjust: "100%",
-    },
-    body: {
-      margin: 0,
-    },
-  })
-);
+export const globalStyle = css({
+  $global: true,
+  html: {
+    WebkitTextSizeAdjust: "100%",
+  },
+  body: {
+    margin: 0,
+  },
+});
 
 /**
  * Default theme settings.
@@ -64,7 +68,10 @@ export const Container = styled("div", [
  */
 export const animationName = (styles: Css) => {
   return css((Style) => {
-    const animationName = Style.registerKeyframes(styles);
+    const animationName = Style.registerCss({
+      $global: true,
+      "@keyframes &": styles,
+    });
 
     return { animationName };
   });

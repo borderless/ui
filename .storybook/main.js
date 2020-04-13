@@ -4,7 +4,7 @@ module.exports = {
     "@storybook/addon-viewport/register",
     "@storybook/addon-knobs/register",
     "@storybook/addon-docs",
-    "@storybook/addon-contexts/register"
+    "@storybook/addon-contexts/register",
   ],
-  stories: ["../src/stories/*.stories.(tsx|mdx)"]
+  stories: ["../src/stories/*.stories.(tsx|mdx)"],
 };

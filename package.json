@@ -13,7 +13,7 @@
   "scripts": {
     "prettier": "prettier --write",
     "lint": "tslint \"src/**/*.ts\" --project tsconfig.json",
-    "format": "npm run prettier -- \"{.,src/**,.storybook/**}/*.{js,jsx,ts,tsx,md,yml,yaml}\"",
+    "format": "npm run prettier -- \"{,src/**/,.storybook/**/}*.{json,js,jsx,ts,tsx,md,yml,yaml}\"",
     "build": "rimraf dist/ dist.es2015/ && tsc && tsc -P tsconfig.es2015.json",
     "specs": "jest --coverage",
     "test": "npm run -s lint && npm run -s build && npm run -s specs",
@@ -61,10 +61,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,md,yml,yaml}": [
-      "npm run prettier",
-      "git add"
-    ]
+    "*.{json,js,jsx,ts,tsx,md,yml,yaml}": "npm run prettier"
   },
   "publishConfig": {
     "access": "public"

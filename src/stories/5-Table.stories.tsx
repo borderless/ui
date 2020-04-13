@@ -1,6 +1,6 @@
-import * as React from "react";
-import { mt } from "@borderlesslabs/atoms";
+import React from "react";
 import {
+  mt,
   Box,
   Table,
   TableHead,
@@ -8,11 +8,11 @@ import {
   TableCell,
   TableRow,
   TableHeadCell,
-  tableBordered
+  tableBordered,
 } from "../index";
 
 export default {
-  title: "Table"
+  title: "Table",
 };
 
 export const table = () => (

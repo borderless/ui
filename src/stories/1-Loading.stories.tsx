@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {
   floatLeft,
   w,
@@ -7,11 +7,12 @@ import {
   mb,
   inlineBlock,
   clearFix,
-} from "@borderlesslabs/atoms";
-import { Spinner } from "../Spinner";
-import { Box } from "../Box";
-import { Paragraph } from "../Text";
-import { LoadingText, loadingStyle } from "../Loading";
+  Spinner,
+  Box,
+  Paragraph,
+  LoadingText,
+  loadingStyle,
+} from "../index";
 
 export default {
   title: "Loading",

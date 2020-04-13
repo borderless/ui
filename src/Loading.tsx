@@ -8,6 +8,8 @@ import {
   h,
   pseudoAfter,
   cursorDefault,
+  colorConfig,
+  borderColor,
 } from "@borderlesslabs/atoms";
 import { animationName } from "./utilities";
 import { themeVars } from "./theme";
@@ -16,10 +18,10 @@ export const loadingStyle = css(
   animationName({
     $displayName: "backgroundFade",
     "0%": {
-      backgroundColor: `var(${themeVars.text})`,
+      backgroundColor: colorConfig.transparent,
     },
     "100%": {
-      backgroundColor: `var(${themeVars.background})`,
+      backgroundColor: `var(${themeVars.textUi})`,
     },
   }),
   {
@@ -28,10 +30,11 @@ export const loadingStyle = css(
     animationIterationCount: "infinite",
     animationTimingFunction: "linear",
     animationDirection: "alternate",
-    backgroundColor: `var(${themeVars.text})`,
+    backgroundColor: `var(${themeVars.textUi})`,
   },
   cursorDefault,
   color.transparent,
+  borderColor.transparent,
   selectNone,
   pointerEventsNone
 );

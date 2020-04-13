@@ -1,15 +1,21 @@
-import * as React from "react";
+import React from "react";
 import {
+  mr,
+  p,
+  flexColumn,
+  mb,
   Badge,
   Box,
   BadgeOutline,
   BadgeInteractive,
+  Outline,
   Card,
+  CardOutline,
   CallOut,
   CallOutCard,
   Progress,
+  Strong,
 } from "../index";
-import { mr, p, flexColumn, mb } from "@borderlesslabs/atoms";
 
 export default {
   title: "Misc",
@@ -18,13 +24,29 @@ export default {
 export const cards = () => (
   <Box css={flexColumn}>
     <Box css={mb[2]}>
-      <CallOut css={p[3]}>Example</CallOut>
+      <Outline css={p[3]}>
+        <Strong>Outline.</Strong> Some text here.
+      </Outline>
     </Box>
     <Box css={mb[2]}>
-      <Card css={p[3]}>Example</Card>
+      <Card css={p[3]}>
+        <Strong>Card.</Strong> Some text here.
+      </Card>
     </Box>
     <Box css={mb[2]}>
-      <CallOutCard css={p[3]}>Example</CallOutCard>
+      <CardOutline css={p[3]}>
+        <Strong>Card Outline.</Strong> Some text here.
+      </CardOutline>
+    </Box>
+    <Box css={mb[2]}>
+      <CallOut css={p[3]}>
+        <Strong>Call Out.</Strong> Some text here.
+      </CallOut>
+    </Box>
+    <Box css={mb[2]}>
+      <CallOutCard css={p[3]}>
+        <Strong>Call Out Card.</Strong> Some text here.
+      </CallOutCard>
     </Box>
   </Box>
 );

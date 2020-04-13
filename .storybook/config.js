@@ -6,7 +6,7 @@ import { withKnobs } from "@storybook/addon-knobs";
 import { p } from "@borderlesslabs/atoms";
 import {
   Container,
-  globalStyles,
+  globalStyle,
   invert,
   defaultTheme,
   darkTheme,
@@ -20,7 +20,7 @@ const ThemeComponent = ({ children, className, theme, invertTheme }) => (
     <Container
       className={className}
       css={[
-        globalStyles,
+        globalStyle,
         defaultTheme,
         { "&&": theme },
         { "&&": { ".invert": invertTheme } },

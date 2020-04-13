@@ -15,6 +15,7 @@ import {
   pseudoActive,
   rounded,
   backgroundColor,
+  colorConfig,
 } from "@borderlesslabs/atoms";
 import { inputStandard, focusRing } from "./Input";
 import { themeVars } from "./theme";
@@ -33,8 +34,14 @@ export const Button = styled("button", [
   border[0],
   backgroundColor.transparent,
   focusRing,
-  pseudoHover({ backgroundColor: `var(${themeVars.uiBackground})` }),
-  pseudoActive({ backgroundColor: `var(${themeVars.uiBackgroundOffset})` }),
+  pseudoHover({
+    color: `var(${themeVars.textUi})`,
+    backgroundColor: `var(${themeVars.uiBackground})`,
+  }),
+  pseudoActive({
+    color: `var(${themeVars.textUi})`,
+    backgroundColor: `var(${themeVars.uiBackgroundOffset})`,
+  }),
   pseudoDisabled(cursorNotAllowed, {
     color: `var(${themeVars.disabledText})`,
     backgroundColor: `var(${themeVars.disabledBackground})`,
@@ -47,8 +54,14 @@ export const ButtonPrimary = styled("button", Button.style, [
     color: `var(${themeVars.interactiveText})`,
     backgroundColor: `var(${themeVars.interactive})`,
   },
-  pseudoHover({ backgroundColor: `var(${themeVars.interactiveOffset})` }),
-  pseudoActive({ backgroundColor: `var(${themeVars.interactiveActive})` }),
+  pseudoHover({
+    color: `var(${themeVars.interactiveText})`,
+    backgroundColor: `var(${themeVars.interactiveOffset})`,
+  }),
+  pseudoActive({
+    color: `var(${themeVars.interactiveText})`,
+    backgroundColor: `var(${themeVars.interactiveActive})`,
+  }),
   pseudoDisabled({
     backgroundColor: `var(${themeVars.disabledOffset})`,
   }),
@@ -56,18 +69,11 @@ export const ButtonPrimary = styled("button", Button.style, [
 
 export const ButtonMinimal = styled("button", Button.style, [
   { color: `var(${themeVars.interactive})` },
-  pseudoHover({
-    color: `var(${themeVars.textUi})`,
-  }),
-  pseudoActive({
-    color: `var(${themeVars.textUi})`,
-  }),
 ]);
 
 export const ButtonOutline = styled("button", ButtonMinimal.style, [
   {
-    color: `var(${themeVars.interactive})`,
-    borderColor: `var(${themeVars.interactive})`,
+    borderColor: colorConfig.current,
   },
   border[1],
   pseudoDisabled({
