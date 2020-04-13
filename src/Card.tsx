@@ -12,6 +12,8 @@ export const Outline = styled("div", [
   border[1],
   rounded.m,
   {
+    color: `var(${themeVars.text})`,
+    backgroundColor: `var(${themeVars.background})`,
     borderColor: `var(${themeVars.uiBorder})`,
   },
 ]);
@@ -19,6 +21,7 @@ export const Outline = styled("div", [
 export const Card = styled("div", [
   rounded.m,
   {
+    color: `var(${themeVars.textUi})`,
     backgroundColor: `var(${themeVars.uiBackground})`,
   },
 ]);
@@ -27,6 +30,8 @@ export const CardOutline = styled("div", Card.style, [
   borderSolid,
   border[1],
   {
+    color: `var(${themeVars.text})`,
+    backgroundColor: `var(${themeVars.background})`,
     borderColor: `var(${themeVars.uiBorder})`,
   },
 ]);
@@ -36,6 +41,8 @@ export const CallOut = styled("div", [
   border[0],
   borderLeft[4],
   {
+    color: `var(${themeVars.text})`,
+    backgroundColor: `var(${themeVars.background})`,
     borderColor: `var(${themeVars.uiBorder})`,
   },
 ]);

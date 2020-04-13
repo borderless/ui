@@ -1,32 +1,23 @@
 import React from "react";
-import { StyleSheetRenderer, Context } from "react-free-style";
+import { StyleSheetRenderer, Context, useCss } from "react-free-style";
 import { addDecorator } from "@storybook/react";
 import { withContexts } from "@storybook/addon-contexts/react";
 import { withKnobs } from "@storybook/addon-knobs";
-import { p } from "@borderlesslabs/atoms";
+import { p, mqDarkMode } from "@borderlesslabs/atoms";
 import {
   Container,
   globalStyle,
+  root,
   invert,
-  defaultTheme,
   darkTheme,
   lightTheme,
 } from "../src/index";
 
 addDecorator(withKnobs);
 
-const ThemeComponent = ({ children, className, theme, invertTheme }) => (
+const ThemeComponent = ({ children, theme, invertTheme }) => (
   <Context.Provider value={new StyleSheetRenderer(true)}>
-    <Container
-      className={className}
-      css={[
-        globalStyle,
-        defaultTheme,
-        { "&&": theme },
-        { "&&": { ".invert": invertTheme } },
-        p[3],
-      ]}
-    >
+    <Container css={[globalStyle, root(theme, invert(invertTheme)), p[3]]}>
       {children}
     </Container>
   </Context.Provider>
@@ -45,7 +36,10 @@ addDecorator(
       params: [
         {
           name: "Default",
-          props: { theme: {}, invertTheme: {} },
+          props: {
+            theme: [lightTheme, mqDarkMode(darkTheme)],
+            invertTheme: [darkTheme, mqDarkMode(lightTheme)],
+          },
           default: true,
         },
         {
@@ -71,6 +65,10 @@ addDecorator(
           name: "None",
           props: { className: "" },
           default: true,
+        },
+        {
+          name: "Invert",
+          props: { className: "invert" },
         },
         {
           name: "Brand",
