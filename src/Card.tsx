@@ -21,8 +21,8 @@ export const Outline = styled("div", [
 export const Card = styled("div", [
   rounded.m,
   {
-    color: `var(${themeVars.textUi})`,
-    backgroundColor: `var(${themeVars.uiBackground})`,
+    color: `var(${themeVars.uiText})`,
+    backgroundColor: `var(${themeVars.ui})`,
   },
 ]);
 

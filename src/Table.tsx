@@ -19,8 +19,8 @@ export const TableBody = styled("tbody");
 
 export const TableHead = styled("thead", [
   {
-    color: `var(${themeVars.textUi})`,
-    backgroundColor: `var(${themeVars.uiBackgroundOffset})`,
+    color: `var(${themeVars.uiText})`,
+    backgroundColor: `var(${themeVars.ui})`,
   },
 ]);
 

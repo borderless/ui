@@ -14,15 +14,14 @@ import {
   flexShrink0,
   inlineBlock,
   p,
-  pseudoFocus,
-  pseudoDisabled,
-  pseudoPlaceholder,
   cursorNotAllowed,
   w,
   h,
   pseudoChecked,
+  pseudoPlaceholder,
 } from "@borderlesslabs/atoms";
 import { themeVars } from "./theme";
+import { disabled, focus } from "./utilities";
 
 export const inputSmall = css(fontSize.s, p[1], h[8]);
 export const inputStandard = css(fontSize.m, p[2], h[10]);
@@ -30,7 +29,7 @@ export const inputLarge = css(fontSize.l, p[3], h[12]);
 export const inputXLarge = css(fontSize.xl, p[4], h[16]);
 
 export const focusRing = css(
-  pseudoFocus({
+  focus({
     boxShadow: `0 0 0 3px var(${themeVars.focusRing})`,
     $displayName: "focusRing",
   })
@@ -39,8 +38,8 @@ export const focusRing = css(
 export const Input = styled("input", [
   {
     color: `var(${themeVars.text})`,
-    backgroundColor: `var(${themeVars.backgroundOffset})`,
-    borderColor: `var(${themeVars.uiBorder})`,
+    backgroundColor: `var(${themeVars.inputBackground})`,
+    borderColor: `var(${themeVars.interactive})`,
   },
   inputStandard,
   appearanceNone,
@@ -51,9 +50,9 @@ export const Input = styled("input", [
   borderSolid,
   border[1],
   focusRing,
-  pseudoFocus({ borderColor: `var(${themeVars.interactive})` }),
-  pseudoPlaceholder({ color: `var(${themeVars.textPlaceholder})` }),
-  pseudoDisabled(cursorNotAllowed, {
+  pseudoPlaceholder({ color: `var(${themeVars.inputPlaceholder})` }),
+  focus({ borderColor: `var(${themeVars.interactiveOffset})` }),
+  disabled(cursorNotAllowed, {
     color: `var(${themeVars.disabledText})`,
     borderColor: `var(${themeVars.disabledOffset})`,
     backgroundColor: `var(${themeVars.disabledBackground})`,
@@ -67,14 +66,20 @@ export const Input = styled("input", [
     rounded.full,
     w.em,
     h.em,
-    pseudoDisabled(cursorNotAllowed, {
+    disabled(cursorNotAllowed, {
       color: `var(${themeVars.disabledOffset})`,
     }),
-    pseudoChecked(backgroundColor.current, {
-      backgroundImage: `var(${themeVars.radioImage})`,
-      backgroundSize: "100% 100%",
-      $displayName: "radioImage",
-    })
+    pseudoChecked(
+      backgroundColor.current,
+      {
+        backgroundImage: `var(${themeVars.radioImage})`,
+        backgroundSize: "100% 100%",
+        $displayName: "radioImage",
+      },
+      disabled({
+        backgroundImage: `var(${themeVars.radioImageDisabled})`,
+      })
+    )
   ),
   nest("&[type=checkbox]", "checkbox")(
     { color: `var(${themeVars.interactive})` },
@@ -84,30 +89,36 @@ export const Input = styled("input", [
     flexShrink0,
     w.em,
     h.em,
-    pseudoDisabled(cursorNotAllowed, {
+    disabled(cursorNotAllowed, {
       color: `var(${themeVars.disabledOffset})`,
     }),
-    pseudoChecked(backgroundColor.current, {
-      backgroundImage: `var(${themeVars.checkboxImage})`,
-      backgroundSize: "100% 100%",
-      $displayName: "checkboxImage",
-    })
+    pseudoChecked(
+      backgroundColor.current,
+      {
+        $displayName: "checkboxImage",
+        backgroundImage: `var(${themeVars.checkboxImage})`,
+        backgroundSize: "100% 100%",
+      },
+      disabled({
+        backgroundImage: `var(${themeVars.checkboxImageDisabled})`,
+      })
+    )
   ),
 ]);
 
 export const Select = styled("select", [
   Input.style,
-  nest(
-    "&:not([multiple])",
-    "not(multiple)"
-  )({
-    $displayName: "image",
-    backgroundImage: `var(${themeVars.selectImage})`,
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "right 0.5em center",
-    backgroundSize: "1.5em 1.5em",
-    paddingRight: "2.5em",
-  }),
+  nest("&:not([multiple])", "not(multiple)")(
+    {
+      $displayName: "selectImage",
+      backgroundImage: `var(${themeVars.selectImage})`,
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "right 0.5em center",
+      backgroundSize: "1.5em 1.5em",
+      paddingRight: "2.5em",
+    },
+    disabled({ backgroundImage: `var(${themeVars.selectImageDisabled})` })
+  ),
   nest("&[multiple]", "multiple")(h.auto),
 ]);
 

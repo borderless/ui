@@ -12,8 +12,8 @@ import {
 
 export const Badge = styled("span", [
   {
-    color: `var(${themeVars.textUi})`,
-    backgroundColor: `var(${themeVars.uiBackground})`,
+    color: `var(${themeVars.uiText})`,
+    backgroundColor: `var(${themeVars.ui})`,
   },
   inlineBlock,
   alignMiddle,

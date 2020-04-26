@@ -15,6 +15,7 @@ import {
   inputSmall,
   Textarea,
 } from "../index";
+import { HelpText } from "../Text";
 
 export default {
   title: "Form",
@@ -39,6 +40,10 @@ export const input = () => (
         <LabelText css={mb[2]}>Required input:</LabelText>
         <Input required />
       </Label>
+    </Box>
+
+    <Box css={[flex, mb[3]]}>
+      <HelpText>Some subtle text here.</HelpText>
     </Box>
 
     <Box css={[flex, mb[3]]}>

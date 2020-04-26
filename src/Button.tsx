@@ -7,21 +7,21 @@ import {
   borderSolid,
   boxBorder,
   outlineNone,
-  pseudoHover,
   border,
-  pseudoDisabled,
   cursorNotAllowed,
   cursorPointer,
-  pseudoActive,
   rounded,
-  backgroundColor,
   colorConfig,
 } from "@borderlesslabs/atoms";
 import { inputStandard, focusRing } from "./Input";
 import { themeVars } from "./theme";
+import { hover, active, disabled } from "./utilities";
 
 export const Button = styled("button", [
-  { color: `var(${themeVars.text})` },
+  {
+    color: `var(${themeVars.uiText})`,
+    background: `var(${themeVars.ui})`,
+  },
   inputStandard,
   cursorPointer,
   boxBorder,
@@ -32,17 +32,16 @@ export const Button = styled("button", [
   borderSolid,
   rounded.sm,
   border[0],
-  backgroundColor.transparent,
   focusRing,
-  pseudoHover({
-    color: `var(${themeVars.textUi})`,
-    backgroundColor: `var(${themeVars.uiBackground})`,
+  hover({
+    color: `var(${themeVars.uiText})`,
+    backgroundColor: `var(${themeVars.uiOffset})`,
   }),
-  pseudoActive({
-    color: `var(${themeVars.textUi})`,
-    backgroundColor: `var(${themeVars.uiBackgroundOffset})`,
+  active({
+    color: `var(${themeVars.uiText})`,
+    backgroundColor: `var(${themeVars.uiActive})`,
   }),
-  pseudoDisabled(cursorNotAllowed, {
+  disabled(cursorNotAllowed, {
     color: `var(${themeVars.disabledText})`,
     backgroundColor: `var(${themeVars.disabledBackground})`,
   }),
@@ -54,15 +53,15 @@ export const ButtonPrimary = styled("button", Button.style, [
     color: `var(${themeVars.interactiveText})`,
     backgroundColor: `var(${themeVars.interactive})`,
   },
-  pseudoHover({
+  hover({
     color: `var(${themeVars.interactiveText})`,
     backgroundColor: `var(${themeVars.interactiveOffset})`,
   }),
-  pseudoActive({
+  active({
     color: `var(${themeVars.interactiveText})`,
     backgroundColor: `var(${themeVars.interactiveActive})`,
   }),
-  pseudoDisabled({
+  disabled({
     backgroundColor: `var(${themeVars.disabledOffset})`,
   }),
 ]);
@@ -76,7 +75,7 @@ export const ButtonOutline = styled("button", ButtonMinimal.style, [
     borderColor: colorConfig.current,
   },
   border[1],
-  pseudoDisabled({
+  disabled({
     borderColor: `var(${themeVars.disabledOffset})`,
   }),
 ]);

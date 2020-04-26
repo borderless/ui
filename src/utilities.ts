@@ -5,10 +5,14 @@ import {
   nest,
   m,
   p,
-  mqDarkMode,
+  NestedCss,
+  pseudoHover,
+  pseudoActive,
+  pseudoDisabled,
+  pseudoFocus,
 } from "@borderlesslabs/atoms";
 import { fontSans } from "./Text";
-import { lightTheme, darkTheme, themeVars } from "./theme";
+import { themeVars } from "./theme";
 
 /**
  * Inverted styles.
@@ -19,6 +23,38 @@ export const invert = nest(".invert", "invert");
  * Root (`:root`) selector.
  */
 export const root = nest(":root", "root", true);
+
+/**
+ * Hover (`:focus`, `.focus`) CSS selector.
+ */
+export const focus = (...css: NestedCss[]) => [
+  pseudoFocus(...css),
+  nest("&.focus", "focus")(...css),
+];
+
+/**
+ * Hover (`:hover`, `.hover`) CSS selector.
+ */
+export const hover = (...css: NestedCss[]) => [
+  pseudoHover(...css),
+  nest("&.hover", "hover")(...css),
+];
+
+/**
+ * Active (`:active`, `.active`) CSS selector.
+ */
+export const active = (...css: NestedCss[]) => [
+  pseudoActive(...css),
+  nest("&.active", "active")(...css),
+];
+
+/**
+ * Disabled (`:disabled`, `.disabled`) CSS selector.
+ */
+export const disabled = (...css: NestedCss[]) => [
+  pseudoDisabled(...css),
+  nest("&.disabled", "disabled")(...css),
+];
 
 /**
  * Global styles for building applications.
@@ -32,15 +68,6 @@ export const globalStyle = css({
     margin: 0,
   },
 });
-
-/**
- * Default theme settings.
- */
-export const defaultTheme = [
-  lightTheme,
-  invert(darkTheme),
-  mqDarkMode(darkTheme, invert(lightTheme)),
-];
 
 /**
  * UI container element with default styles.

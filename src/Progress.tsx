@@ -9,8 +9,8 @@ const ProgressBar = styled("div", [
   rounded.sm,
 ]);
 
-const ProgessContainer = styled("div", [
-  { backgroundColor: `var(${themeVars.backgroundOffset})` },
+const ProgressContainer = styled("div", [
+  { backgroundColor: `var(${themeVars.ui})` },
   h.em,
 ]);
 
@@ -25,7 +25,7 @@ export const Progress = ({
   max?: number;
   value?: number;
 }) => (
-  <ProgessContainer {...props}>
+  <ProgressContainer {...props}>
     <ProgressBar
       role="progressbar"
       aria-valuenow={value}
@@ -35,5 +35,5 @@ export const Progress = ({
     >
       {children}
     </ProgressBar>
-  </ProgessContainer>
+  </ProgressContainer>
 );

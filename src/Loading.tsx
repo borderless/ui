@@ -21,7 +21,7 @@ export const loadingStyle = css(
       backgroundColor: colorConfig.transparent,
     },
     "100%": {
-      backgroundColor: `var(${themeVars.textUi})`,
+      backgroundColor: `var(${themeVars.text})`,
     },
   }),
   {
@@ -30,7 +30,7 @@ export const loadingStyle = css(
     animationIterationCount: "infinite",
     animationTimingFunction: "linear",
     animationDirection: "alternate",
-    backgroundColor: `var(${themeVars.textUi})`,
+    backgroundColor: `var(${themeVars.text})`,
   },
   cursorDefault,
   color.transparent,

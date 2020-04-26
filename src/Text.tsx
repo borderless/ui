@@ -5,7 +5,6 @@ import {
   inlineBlock,
   whitespaceNoWrap,
   alignBaseline,
-  pseudoHover,
   rounded,
   block,
   inlineFlex,
@@ -33,24 +32,26 @@ export const Code = styled("code", [
   rounded.sm,
   { fontFamily: fontMono },
   {
-    color: `var(${themeVars.textUi})`,
-    backgroundColor: `var(${themeVars.uiBackground})`,
+    color: `var(${themeVars.uiText})`,
+    backgroundColor: `var(${themeVars.ui})`,
   },
 ]);
 
 export const Link = styled("a", [
-  { color: `var(${themeVars.interactive})` },
-  { textDecoration: "none" },
-  pseudoHover({ textDecoration: "underline" }),
+  { color: `var(${themeVars.textEmphasis})`, textDecoration: "underline" },
 ]);
 
 export const Label = styled("label", [block]);
 
 export const InlineLabel = styled("label", [inlineFlex, itemsCenter]);
 
-export const LabelText = styled("div");
+export const LabelText = styled("div", {
+  color: `var(${themeVars.textEmphasis})`,
+});
 
-export const HelpText = styled("div", [{ color: `var(${themeVars.textUi})` }]);
+export const HelpText = styled("div", [
+  { color: `var(${themeVars.textSubtle})` },
+]);
 
 export const Divider = styled("hr", [
   borderSolid,
@@ -59,4 +60,7 @@ export const Divider = styled("hr", [
   { borderColor: `var(${themeVars.uiBorder})` },
 ]);
 
-export const Strong = styled("strong", [fontWeight.bold]);
+export const Strong = styled("strong", [
+  { color: `var(${themeVars.textEmphasis})` },
+  fontWeight.bold,
+]);
