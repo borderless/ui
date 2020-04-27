@@ -7,6 +7,7 @@ export const Dropdown = styled("div", [
   {
     color: `var(${themeVars.uiText})`,
     backgroundColor: `var(${themeVars.ui})`,
+    borderColor: `var(${themeVars.uiBorder})`,
   },
   py[2],
   boxShadow.s,

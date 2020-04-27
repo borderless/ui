@@ -12,6 +12,7 @@ import {
   cursorPointer,
   rounded,
   colorConfig,
+  backgroundColor,
 } from "@borderlesslabs/atoms";
 import { inputStandard, focusRing } from "./Input";
 import { themeVars } from "./theme";
@@ -20,10 +21,9 @@ import { hover, active, disabled } from "./utilities";
 export const Button = styled("button", [
   {
     color: `var(${themeVars.uiText})`,
-    background: `var(${themeVars.ui})`,
+    backgroundColor: `var(${themeVars.ui})`,
   },
   inputStandard,
-  cursorPointer,
   boxBorder,
   inlineFlex,
   justifyCenter,
@@ -33,7 +33,7 @@ export const Button = styled("button", [
   rounded.sm,
   border[0],
   focusRing,
-  hover({
+  hover(cursorPointer, {
     color: `var(${themeVars.uiText})`,
     backgroundColor: `var(${themeVars.uiOffset})`,
   }),
@@ -67,10 +67,10 @@ export const ButtonPrimary = styled("button", Button.style, [
 ]);
 
 export const ButtonMinimal = styled("button", Button.style, [
-  { color: `var(${themeVars.interactive})` },
+  backgroundColor.transparent,
 ]);
 
-export const ButtonOutline = styled("button", ButtonMinimal.style, [
+export const ButtonOutline = styled("button", Button.style, [
   {
     borderColor: colorConfig.current,
   },

@@ -25,35 +25,44 @@ export const invert = nest(".invert", "invert");
 export const root = nest(":root", "root", true);
 
 /**
+ * CSS selector versions of interactivity.
+ */
+const selectorFocus = nest("&.focus", "focus");
+const selectorHover = nest("&.hover", "hover");
+const selectorActive = nest("&.active", "active");
+const selectorDisabled = nest("&.disabled", "disabled");
+const selectorEffects = nest("&:not(.no-effects)", "effects");
+
+/**
  * Hover (`:focus`, `.focus`) CSS selector.
  */
 export const focus = (...css: NestedCss[]) => [
-  pseudoFocus(...css),
-  nest("&.focus", "focus")(...css),
+  selectorEffects(pseudoFocus(...css)),
+  selectorFocus(...css),
 ];
 
 /**
  * Hover (`:hover`, `.hover`) CSS selector.
  */
 export const hover = (...css: NestedCss[]) => [
-  pseudoHover(...css),
-  nest("&.hover", "hover")(...css),
+  selectorEffects(pseudoHover(...css)),
+  selectorHover(...css),
 ];
 
 /**
  * Active (`:active`, `.active`) CSS selector.
  */
 export const active = (...css: NestedCss[]) => [
-  pseudoActive(...css),
-  nest("&.active", "active")(...css),
+  selectorEffects(pseudoActive(...css)),
+  selectorActive(...css),
 ];
 
 /**
  * Disabled (`:disabled`, `.disabled`) CSS selector.
  */
 export const disabled = (...css: NestedCss[]) => [
-  pseudoDisabled(...css),
-  nest("&.disabled", "disabled")(...css),
+  selectorEffects(pseudoDisabled(...css)),
+  selectorDisabled(...css),
 ];
 
 /**
