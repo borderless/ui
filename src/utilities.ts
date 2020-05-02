@@ -104,7 +104,7 @@ export const Container = styled("div", [
  */
 export const animationName = (styles: Css) => {
   return css((Style) => {
-    const animationName = Style.registerCss({
+    const animationName = Style.registerStyle({
       $global: true,
       "@keyframes &": styles,
     });
